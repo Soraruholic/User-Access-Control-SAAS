@@ -1,5 +1,7 @@
-package log;
+package SAAS.UAC.log;
 
+
+import SAAS.UAC.UPR.User;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -8,9 +10,9 @@ import java.security.*;
 import java.nio.charset.StandardCharsets;
 
 
-public class Main {
+public class login {
     public static void main(String[] args) {
-        ArrayList<user>list = new ArrayList<>();
+        ArrayList<User>list = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("欢迎来到SAAS");
@@ -32,7 +34,7 @@ public class Main {
         }
     }
 
-    private static void forgotpassword(ArrayList<user>list) {
+    private static void forgotpassword(ArrayList<User>list) {
         // System.out.println("忘记密码");
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入用户名"
@@ -43,15 +45,15 @@ public class Main {
             System.out.println("error");
             return ;
         }
-        System.out.println("请输入身份证号");
-        String personID = sc.next() ;
+//        System.out.println("请输入身份证号");
+//        String personID = sc.next() ;
         System.out.println("请输入手机号");
         String phonenumber = sc.next();
 
         int index = findindex(list,username);
-        user user = list.get(index);
+        User user = list.get(index);
 
-        if(!(user.getPersonID().equalsIgnoreCase(personID)&&user.getPhonenumber().equalsIgnoreCase(phonenumber))){
+        if(!(user.getPhonenumber().equalsIgnoreCase(phonenumber))){
             System.out.println("输入有误,不能修改");
             return;
         }
@@ -70,14 +72,14 @@ public class Main {
                 System.out.println("两次密码输入不一致,重新输入");
             }
         }
-        user.setPassword(password);
+        user.setPassword(md5(password));
         System.out.println("修改成功");
 
     }
 
-    private static int findindex(ArrayList<user> list, String username) {
+    private static int findindex(ArrayList<User> list, String username) {
         for (int i = 0; i < list.size(); i++) {
-            user user = list.get(i);
+            User user = list.get(i);
             if(user.getUsername().equals(username)){
                 return i;
             }
@@ -85,7 +87,7 @@ public class Main {
         return -1;
     }
 
-    private static void register(ArrayList<user>list) {
+    private static void register(ArrayList<User>list) {
         // System.out.println("注册");
         //用户信息添加到集合
         Scanner sc = new Scanner(System.in);
@@ -129,19 +131,19 @@ public class Main {
                 break;
             }
         }
-        //3.键盘录入身份证
-        String personID;
-        while (true) {
-            System.out.println("请输入身份证号");
-            personID = sc.next();
-            boolean flag = checkPersonID(personID);
-            if(flag){
-                System.out.println("身份证正确");
-                break;
-            }else{
-                System.out.println("身份证输入错误,请重新输入");
-            }
-        }
+//        //3.键盘录入身份证
+//        String personID;
+//        while (true) {
+//            System.out.println("请输入身份证号");
+//            personID = sc.next();
+//            boolean flag = checkPersonID(personID);
+//            if(flag){
+//                System.out.println("身份证正确");
+//                break;
+//            }else{
+//                System.out.println("身份证输入错误,请重新输入");
+//            }
+//        }
         //4.键盘录入手机号
         String phoneNumber;
         while(true) {
@@ -158,7 +160,8 @@ public class Main {
         }
         String passwordMd5 = md5(password);
         //数据放入对象
-        user u = new user(username,passwordMd5,personID,phoneNumber);
+        User u = new User(username, null,null,null,null,null, passwordMd5, phoneNumber) {
+        };
         //放入集合
         list.add(u);
         System.out.println("注册成功");
@@ -199,29 +202,29 @@ public class Main {
         }return true;
     }
 
-    private static boolean checkPersonID(String personID) {
-        if(personID.length()!=18){
-            return false;
-        }
-        //不能0开头
-        //boolean flag = personID.startsWith("0");
-        if(personID.startsWith("0")){
-            return false;
-        }
-        //前面17位是数字
-        for (int i = 0; i < personID.length()-1; i++) {
-            char c = personID.charAt(i);
-            if(!(c>= '0' && c<='9')){
-                return false;
-            }
-        }
-        //最后一位可以是数字或者x
-        char endchar = personID.charAt(personID.length()-1);
-        return (endchar >= '0' && endchar <= '9') || (endchar == 'x') || (endchar == 'X');
-    }
+//    private static boolean checkPersonID(String personID) {
+//        if(personID.length()!=18){
+//            return false;
+//        }
+//        //不能0开头
+//        //boolean flag = personID.startsWith("0");
+//        if(personID.startsWith("0")){
+//            return false;
+//        }
+//        //前面17位是数字
+//        for (int i = 0; i < personID.length()-1; i++) {
+//            char c = personID.charAt(i);
+//            if(!(c>= '0' && c<='9')){
+//                return false;
+//            }
+//        }
+//        //最后一位可以是数字或者x
+//        char endchar = personID.charAt(personID.length()-1);
+//        return (endchar >= '0' && endchar <= '9') || (endchar == 'x') || (endchar == 'X');
+//    }
 
-    private static boolean contains(ArrayList<user> list, String username) {
-        for (log.user user : list) {
+    private static boolean contains(ArrayList<User> list, String username) {
+        for (SAAS.UAC.UPR.User user : list) {
             String rightname = user.getUsername();
             if (rightname.equals(username)) {
                 return true;
@@ -255,7 +258,7 @@ public class Main {
         return count >0;
     }
 
-    private static void login(ArrayList<user>list) {
+    private static void login(ArrayList<User>list) {
         // System.out.println("登录");
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入用户名");
@@ -287,7 +290,8 @@ public class Main {
         }
         //定义一个方法,判断用户名和密码
         //封装,零散的数据封装为对象
-        user userinfo = new user(username,md5(password),null,null);
+        User userinfo = new User(username, null,null,null,null,null, md5(password), null) {
+        };
         boolean result = checkuserinfo(list,userinfo);
         if(result){
             System.out.println("登录成功");
@@ -297,9 +301,9 @@ public class Main {
         }
     }
 
-    private static boolean checkuserinfo(ArrayList<user> list, user userinfo) {
+    private static boolean checkuserinfo(ArrayList<User> list, User userinfo) {
         //遍历
-        for (log.user user : list) {
+        for (SAAS.UAC.UPR.User user : list) {
             if (user.getUsername().equals(userinfo.getUsername()) && (user.getPassword().equals(userinfo.getPassword()))) {
                 return true;
             }
