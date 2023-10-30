@@ -31,16 +31,5 @@ public class Tenant extends User{
     HashSet<TenantUser> getTenantUserList() {
         return tenantUserList;
     }
-    HashSet<Permission> getPermissionPool() {
-        return permissionPool;
-    }
-    HashSet<Role> getRolePool() {
-        return rolePool;
-    }
-    HashSet<Permission> getPermissionList() {
-        return permissionList;
-    }
-    HashSet<Role> getRoleList() {
-        return roleList;
-    }
+
 }

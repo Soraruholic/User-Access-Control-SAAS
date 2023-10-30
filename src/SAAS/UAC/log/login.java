@@ -10,6 +10,13 @@ import java.security.*;
 import java.nio.charset.StandardCharsets;
 
 
+
+// TODO: connect to mysql database
+// TODO: add email verification
+// TODO: add phone number verification
+// TODO: use sha instead of MD5
+// TODO: test cases
+
 public class login {
     public static void main(String[] args) {
         ArrayList<User>list = new ArrayList<>();

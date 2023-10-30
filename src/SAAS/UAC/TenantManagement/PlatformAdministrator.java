@@ -20,20 +20,8 @@ public class PlatformAdministrator extends User{
         super(name, userID, permissionList, roleList, permissionPool, rolePool);
         this.servicePool = servicePool;
     }
-    public HashSet<Permission> getPermissionPool() {
-        return permissionPool;
-    }
-    public HashSet<Role> getRolePool() {
-        return rolePool;
-    }
     public HashSet<Service> getServicePool() {
         return servicePool;
-    }
-    public HashSet<Permission> getPermissionList() {
-        return permissionList;
-    }
-    public HashSet<Role> getRoleList() {
-        return roleList;
     }
 
     // Operations for Permission
