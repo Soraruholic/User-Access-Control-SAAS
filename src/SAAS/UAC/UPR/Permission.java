@@ -6,4 +6,11 @@ public abstract class Permission {
         this.permissionID = permissionID;
         this.permissionName = permissionName;
     }
+
+    public String getPermissionID() {
+        return permissionID;
+    }
+    public String getPermissionName() {
+        return permissionName;
+    }
 }
