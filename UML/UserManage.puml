@@ -1,0 +1,89 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'abstract class AbstractList
+'abstract AbstractCollection
+'interface List
+'interface Collection
+'
+'List <|-- AbstractList
+'Collection <|-- AbstractCollection
+'
+'Collection <|- List
+'AbstractCollection <|- AbstractList
+'AbstractList <|-- ArrayList
+'
+'class ArrayList {
+'Object[] elementData
+'size()
+'}
+'
+'enum TimeUnit {
+'DAYS
+'HOURS
+'MINUTES
+'}
+
+abstract class User {
+-name: String
+-userID: String
+-permissionList: HashSet<Permission>
+-permissionPool: HashSet<Permission>
+-roleList: HashSet<Role>
+-rolePool: HashSet<Role>
+}
+
+class PlatformAdmin {
+-servicePool: HashSet<Service>
+
+.. Operations for Permission ..
++addPermission(Permission permission)
++deletePermission(Permission permission)
++assignPermissionTo(Permission permission, Tenant tenant)
++deprivePermissionFrom(Permission permission, Tenant tenant)
+
+.. Operations for Role ..
++addRole(Role role)
++deleteRole(Role role)
++assignRole(Role role, Tenant tenant)
++depriveRole(Role role, Tenant tenant)
+
+.. Operations for Service ..
++addService(Service service)
++deleteService(Service service)
++assignService(Service service, Tenant tenant)
++depriveService(Service service, Tenant tenant)
+}
+
+class Tenant {
+-serviceList: HashSet<Service>
+-tenantAdministratorList: HashSet<TenantAdministrator>
+-tenantUserList: HashSet<TenantUser>
+}
+
+class TenantAdministrator {
+.. Operations for Permission ..
++addPermission(Permission permission)
++deletePermission(Permission permission)
++assignPermissionTo(Permission permission, TenantUser tenantUser)
++deprivePermissionFrom(Permission permission, TenantUser tenantUser)
+
+.. Operations for Role ..
++addRole(Role role)
++deleteRole(Role role)
++assignRole(Role role, TenantUser tenantUser)
++depriveRole(Role role, TenantUser tenantUser)
+}
+
+class TenantUser {
+
+}
+
+User <|-- PlatformAdmin
+User <|-- Tenant
+Tenant <|-- TenantAdministrator
+Tenant <|-- TenantUser
+
+
+
+@enduml
