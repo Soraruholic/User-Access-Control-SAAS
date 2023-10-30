@@ -20,7 +20,24 @@ public class GlobalRole {
         if (globalRoleMap.containsKey(roleID)) {
             return globalRoleMap.get(roleID);
         } else {
+            // throw new Exception("Role not found");
+            return null;
+        }
+    }
+
+    public static void deleteRole(Role role) throws Exception {
+        if (globalRoleMap.containsKey(role.getRoleID())) {
+            globalRoleMap.remove(role.getRoleID());
+        } else {
             throw new Exception("Role not found");
+        }
+    }
+
+    public static void addRole(Role role) throws Exception {
+        if (globalRoleMap.containsKey(role.getRoleID())) {
+            throw new Exception("Role already exists");
+        } else {
+            globalRoleMap.put(role.getRoleID(), role);
         }
     }
 

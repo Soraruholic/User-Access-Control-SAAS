@@ -18,7 +18,7 @@ public class GlobalPermission {
         } else if (globalDataPermissionList.containsKey(permissionID)) {
             return globalDataPermissionList.get(permissionID);
         } else {
-            throw new Exception("Permission not found");
+            return null;
         }
     }
 

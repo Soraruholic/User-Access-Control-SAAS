@@ -5,7 +5,6 @@ import SAAS.UAC.UPR.Role;
 import SAAS.UAC.UPR.User;
 import SAAS.UAC.UPR.Service;
 
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -166,5 +165,39 @@ public class PlatformAdministrator extends User{
 
         // then delete the service from the tenant's serviceList
         tenant.serviceList.remove(service);
+    }
+
+    // For DEBUG
+    // Display all the permissions in the permissionPool/List, roles in the rolePool/List, services in the servicePool/List
+    public void display() {
+        displayAllPermissions();
+        displayAllRoles();
+        displayAllServices();
+    }
+    private void displayAllPermissions(){
+        System.out.println("All permissions in the permissionPool:");
+        for (Permission permission : permissionPool){
+            System.out.println("\t" + permission.getPermissionID());
+        }
+        System.out.println("All permissions in the permissionList:");
+        for (Permission permission : permissionList){
+            System.out.println("\t" + permission.getPermissionID());
+        }
+    }
+    private void displayAllRoles(){
+        System.out.println("All roles in the rolePool:");
+        for (Role role : rolePool){
+            System.out.println("\t" + role.getRoleID());
+        }
+        System.out.println("All roles in the roleList:");
+        for (Role role : roleList){
+            System.out.println("\t" + role.getRoleID());
+        }
+    }
+    private void displayAllServices(){
+        System.out.println("All services in the servicePool:");
+        for (Service service : servicePool){
+            System.out.println("\t" + service.getServiceID());
+        }
     }
 }
