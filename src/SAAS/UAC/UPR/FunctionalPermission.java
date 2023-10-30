@@ -13,5 +13,12 @@ public class FunctionalPermission extends Permission {
         this.permissionLevel = permissionLevel;
     }
 
+    public HashSet<String> getFunctionIDList() {
+        return functionIDList;
+    }
+    public PermissionLevel getPermissionLevel() {
+        return permissionLevel;
+    }
+
 }
 

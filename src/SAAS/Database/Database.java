@@ -1,6 +1,9 @@
 package SAAS.Database;
 import SAAS.UAC.TenantManagement.PlatformAdministrator;
+import SAAS.UAC.TenantManagement.Tenant;
 import SAAS.UAC.UPR.*;
+import SAAS.UAC.UserManagement.TenantAdministrator;
+import SAAS.UAC.UserManagement.TenantUser;
 
 import java.sql.*;
 import java.util.Arrays;
@@ -33,8 +36,9 @@ public class Database {
         Statement stat = con.createStatement();
         int count1 = stat.executeUpdate(deletePlatformAdministratorTable);
         int count2 = stat.executeUpdate(createPlatformAdministratorTable);
-        System.out.println(count1);
-        System.out.println(count2);
+        if (count1 == 0 && count2 == 0) {
+            System.out.println("PlatformAdministrator table created successfully");
+        }
         stat.close();
         con.close();
     }
@@ -58,8 +62,9 @@ public class Database {
         Statement stat = con.createStatement();
         int count1 = stat.executeUpdate(deleteTenantTable);
         int count2 = stat.executeUpdate(createTenantTable);
-        System.out.println(count1);
-        System.out.println(count2);
+        if (count1 == 0 && count2 == 0) {
+            System.out.println("Tenant table created successfully");
+        }
         stat.close();
         con.close();
     }
@@ -75,13 +80,16 @@ public class Database {
                 "roleList VARCHAR(255) NOT NULL," +
                 "permissionPool VARCHAR(255) NOT NULL," +
                 "rolePool VARCHAR(255) NOT NULL," +
-                "PRIMARY KEY (userID)" +
+                "tenantID VARCHAR(255) NOT NULL," +
+                "PRIMARY KEY (userID)," +
+                "CONSTRAINT fk_tenantID FOREIGN KEY (tenantID) REFERENCES Tenant(userID)" +
                 ");";
         Statement stat = con.createStatement();
         int count1 = stat.executeUpdate(deleteTenantAdministratorTable);
         int count2 = stat.executeUpdate(createTenantAdministratorTable);
-        System.out.println(count1);
-        System.out.println(count2);
+        if (count1 == 0 && count2 == 0) {
+            System.out.println("TenantAdministrator table created successfully");
+        }
         stat.close();
         con.close();
     }
@@ -97,13 +105,16 @@ public class Database {
                 "roleList VARCHAR(255) NOT NULL," +
                 "permissionPool VARCHAR(255) NOT NULL," +
                 "rolePool VARCHAR(255) NOT NULL," +
-                "PRIMARY KEY (userID)" +
+                "tenantID VARCHAR(255)," +
+                "PRIMARY KEY (userID)," +
+                "FOREIGN KEY (tenantID) REFERENCES Tenant(userID)" +
                 ");";
         Statement stat = con.createStatement();
         int count1 = stat.executeUpdate(deleteTenantUserTable);
         int count2 = stat.executeUpdate(createTenantUserTable);
-        System.out.println(count1);
-        System.out.println(count2);
+        if (count1 == 0 && count2 == 0) {
+            System.out.println("TenantUser table created successfully");
+        }
         stat.close();
         con.close();
     }
@@ -122,8 +133,9 @@ public class Database {
         Statement stat = con.createStatement();
         int count1 = stat.executeUpdate(deleteFunctionalPermissionTable);
         int count2 = stat.executeUpdate(createFunctionalPermissionTable);
-        System.out.println(count1);
-        System.out.println(count2);
+        if (count1 == 0 && count2 == 0) {
+            System.out.println("FunctionalPermission table created successfully");
+        }
         stat.close();
         con.close();
     }
@@ -142,8 +154,9 @@ public class Database {
         Statement stat = con.createStatement();
         int count1 = stat.executeUpdate(deleteDataPermissionTable);
         int count2 = stat.executeUpdate(createDataPermissionTable);
-        System.out.println(count1);
-        System.out.println(count2);
+        if (count1 == 0 && count2 == 0) {
+            System.out.println("DataPermission table created successfully");
+        }
         stat.close();
         con.close();
     }
@@ -161,8 +174,9 @@ public class Database {
         Statement stat = con.createStatement();
         int count1 = stat.executeUpdate(deleteRoleTable);
         int count2 = stat.executeUpdate(createRoleTable);
-        System.out.println(count1);
-        System.out.println(count2);
+        if (count1 == 0 && count2 == 0) {
+            System.out.println("Role table created successfully");
+        }
         stat.close();
         con.close();
     }
@@ -182,14 +196,15 @@ public class Database {
         Statement stat = con.createStatement();
         int count1 = stat.executeUpdate(deleteServiceTable);
         int count2 = stat.executeUpdate(createServiceTable);
-        System.out.println(count1);
-        System.out.println(count2);
+        if (count1 == 0 && count2 == 0) {
+            System.out.println("Service table created successfully");
+        }
         stat.close();
         con.close();
     }
 
     // Methods to insert data into tables
-    private static void insert_PlatFormAdministrator(PlatformAdministrator user) throws Exception {
+    private static void insert_PlatformAdministrator(PlatformAdministrator user, boolean verbose) throws Exception {
         // get the permisionList from the user object and convert it to a string
         String permissionList = "";
         for (Permission permission : user.getPermissionList()) {
@@ -229,27 +244,348 @@ public class Database {
         stat.setString(6, rolePool);
         stat.setString(7, servicePool);
         int count = stat.executeUpdate();
-        System.out.println(count);
+        if (verbose) {
+            if (count == 1) {
+                System.out.println("Insert PlatformAdministrator successfully!");
+                // print the userID and userName
+                System.out.println("\tID: " + user.getUserID());
+                System.out.println("\tName: " + user.getName());
+            } else {
+                System.out.println("Insert PlatformAdministrator failed!");
+            }
+        }
+        stat.close();
+        con.close();
+    }
+    // (DONE) insert_functional_permission
+    private static void insert_FunctionalPermission(FunctionalPermission permission, boolean verbose) throws Exception {
+        // get the functionIDList from the permission object and convert it to a string
+        String functionIDList = "";
+        for (String functionID : permission.getFunctionIDList()) {
+            functionIDList += functionID + ";";
+        }
+        // insert the permission into the table
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String insertPermission = "INSERT INTO FunctionalPermission VALUES (?,?,?,?);";
+        PreparedStatement stat = con.prepareStatement(insertPermission);
+        stat.setString(1, permission.getPermissionID());
+        stat.setString(2, permission.getPermissionName());
+        stat.setString(3, permission.getPermissionLevel().toString());
+        stat.setString(4, functionIDList);
+        int count = stat.executeUpdate();
+        if (verbose) {
+            if (count == 1) {
+                System.out.println("Insert FunctionalPermission successfully!");
+                // print the permissionID and permissionName
+                System.out.println("\tID: " + permission.getPermissionID());
+                System.out.println("\tName: " + permission.getPermissionName());
+            } else {
+                System.out.println("Insert FunctionalPermission failed!");
+            }
+        }
+        stat.close();
+        con.close();
+    }
+    // (DONE) insert_data_permission
+    private static void insert_DataPermission(DataPermission permission, boolean verbose) throws Exception {
+        // get the dataIDList from the permission object and convert it to a string
+        String dataIDList = "";
+        for (DataOperation dataID : permission.getDataOperationList()) {
+            dataIDList += dataID.toString() + ";";
+        }
+        // insert the permission into the table
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String insertPermission = "INSERT INTO DataPermission VALUES (?,?,?,?);";
+        PreparedStatement stat = con.prepareStatement(insertPermission);
+        stat.setString(1, permission.getPermissionID());
+        stat.setString(2, permission.getPermissionName());
+        stat.setString(3, permission.getDataLocation());
+        stat.setString(4, dataIDList);
+        int count = stat.executeUpdate();
+        if (verbose) {
+            if (count == 1) {
+                System.out.println("Insert DataPermission successfully!");
+                // print the permissionID and permissionName
+                System.out.println("\tID: " + permission.getPermissionID());
+                System.out.println("\tName: " + permission.getPermissionName());
+            } else {
+                System.out.println("Insert DataPermission failed!");
+            }
+        }
+        stat.close();
+        con.close();
+    }
+    // (DONE) insert_role
+    private static void insert_Role(Role role, boolean verbose) throws Exception {
+        // get the permissionList from the role object and convert it to a string
+        String permissionList = "";
+        for (Permission permission : role.getPermissionList()) {
+            permissionList += permission.getPermissionID() + ";";
+        }
+        // insert the role into the table
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String insertRole = "INSERT INTO Role VALUES (?,?,?);";
+        PreparedStatement stat = con.prepareStatement(insertRole);
+        stat.setString(1, role.getRoleID());
+        stat.setString(2, role.getRoleName());
+        stat.setString(3, permissionList);
+        int count = stat.executeUpdate();
+        if (verbose) {
+            if (count == 1) {
+                System.out.println("Insert Role successfully!");
+                // print the roleID and roleName
+                System.out.println("\tID: " + role.getRoleID());
+                System.out.println("\tName: " + role.getRoleName());
+            } else {
+                System.out.println("Insert Role failed!");
+            }
+        }
+        stat.close();
+        con.close();
+    }
+    // (DONE) insert_service
+    private static void insert_Service(Service service, boolean verbose) throws Exception {
+        // get the roleList from the service object and convert it to a string
+        String roleList = "";
+        if (service.getRoleList() != null) {
+            for (Role role : service.getRoleList()) {
+                roleList += role.getRoleID() + ";";
+            }
+        }
+        // get the permissionList from the service object and convert it to a string
+        String permissionList = "";
+        if (service.getPermissionList() != null) {
+            for (Permission permission : service.getPermissionList()) {
+                permissionList += permission.getPermissionID() + ";";
+            }
+        }
+
+        // insert the service into the table
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String insertService = "INSERT INTO Service VALUES (?,?,?,?,?);";
+        PreparedStatement stat = con.prepareStatement(insertService);
+        stat.setString(1, service.getServiceID());
+        stat.setString(2, service.getServiceName());
+        stat.setString(3, roleList);
+        stat.setString(4, permissionList);
+        stat.setString(5, service.getPrice());
+        int count = stat.executeUpdate();
+        if (verbose) {
+            if (count == 1) {
+                System.out.println("Insert Service successfully!");
+                // print the serviceID and serviceName
+                System.out.println("\tID: " + service.getServiceID());
+                System.out.println("\tName: " + service.getServiceName());
+            } else {
+                System.out.println("Insert Service failed!");
+            }
+        }
+        stat.close();
+        con.close();
+    }
+    // TODO: insert_Tenant
+    private static void insert_Tenant(Tenant tenant, boolean verbose) throws Exception {
+        // get the serviceList from the tenant object and convert it to a string
+        String serviceList = "";
+        if (tenant.getServiceList() != null) {
+            for (Service service : tenant.getServiceList()) {
+                serviceList += service.getServiceID() + ";";
+            }
+        }
+        // get the permissionList from the tenant object and convert it to a string
+        String permissionList = "";
+        if (tenant.getPermissionList() != null) {
+            for (Permission permission : tenant.getPermissionList()) {
+                permissionList += permission.getPermissionID() + ";";
+            }
+        }
+        // get the roleList from the tenant object and convert it to a string
+        String roleList = "";
+        if (tenant.getRoleList() != null) {
+            for (Role role : tenant.getRoleList()) {
+                roleList += role.getRoleID() + ";";
+            }
+        }
+        // get the permissionPool from the tenant object and convert it to a string
+        String permissionPool = "";
+        if (tenant.getPermissionPool() != null) {
+            for (Permission permission : tenant.getPermissionPool()) {
+                permissionPool += permission.getPermissionID() + ";";
+            }
+        }
+        // get the rolePool from the tenant object and convert it to a string
+        String rolePool = "";
+        if (tenant.getRolePool() != null) {
+            for (Role role : tenant.getRolePool()) {
+                rolePool += role.getRoleID() + ";";
+            }
+        }
+        // get the tenantAdministratorList from the tenant object and convert it to a string
+        String tenantAdministratorList = "";
+        if (tenant.getTenantAdministratorList() != null) {
+            for (User tenantAdministrator : tenant.getTenantAdministratorList()) {
+                tenantAdministratorList += tenantAdministrator.getUserID() + ";";
+            }
+        }
+        // get the tenantUserList from the tenant object and convert it to a string
+        String tenantUserList = "";
+        if (tenant.getTenantUserList() != null) {
+            for (User tenantUser : tenant.getTenantUserList()) {
+                tenantUserList += tenantUser.getUserID() + ";";
+            }
+        }
+
+        // insert the tenant into the table
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String insertTenant = "INSERT INTO Tenant VALUES (?,?,?,?,?,?,?,?,?);";
+        PreparedStatement stat = con.prepareStatement(insertTenant);
+        stat.setString(1, tenant.getUserID());
+        stat.setString(2, tenant.getName());
+        stat.setString(3, permissionList);
+        stat.setString(4, roleList);
+        stat.setString(5, permissionPool);
+        stat.setString(6, rolePool);
+        stat.setString(7, serviceList);
+        stat.setString(8, tenantAdministratorList);
+        stat.setString(9, tenantUserList);
+        int count = stat.executeUpdate();
+        if (verbose) {
+            if (count == 1) {
+                System.out.println("Insert Tenant successfully!");
+                // print the tenantID and tenantName
+                System.out.println("\tID: " + tenant.getUserID());
+                System.out.println("\tName: " + tenant.getName());
+            } else {
+                System.out.println("Insert Tenant failed!");
+            }
+        }
+        stat.close();
+        con.close();
+    }
+    // TODO: insert_TenantAdministrator
+    private static void insert_TenantAdministrator(Tenant tenantAdministrator, String tenantID, boolean verbose) throws Exception {
+        // get the tenantList from the tenantAdministrator object and convert it to a string
+        String permissionPool = "";
+        if (tenantAdministrator.getPermissionPool() != null) {
+            for (Permission permission : tenantAdministrator.getPermissionPool()) {
+                permissionPool += permission.getPermissionID() + ";";
+            }
+        }
+        // get the serviceList from the tenantAdministrator object and convert it to a string
+        String rolePool = "";
+        if (tenantAdministrator.getRolePool() != null) {
+            for (Role role : tenantAdministrator.getRolePool()) {
+                rolePool += role.getRoleID() + ";";
+            }
+        }
+        // get the permissionList from the tenantAdministrator object and convert it to a string
+        String permissionList = "";
+        if (tenantAdministrator.getPermissionList() != null) {
+            for (Permission permission : tenantAdministrator.getPermissionList()) {
+                permissionList += permission.getPermissionID() + ";";
+            }
+        }
+        // get the roleList from the tenantAdministrator object and convert it to a string
+        String roleList = "";
+        if (tenantAdministrator.getRoleList() != null) {
+            for (Role role : tenantAdministrator.getRoleList()) {
+                roleList += role.getRoleID() + ";";
+            }
+        }
+
+        // insert the tenantAdministrator into the table
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String insertTenantAdministrator = "INSERT INTO TenantAdministrator VALUES (?,?,?,?,?,?,?);";
+        PreparedStatement stat = con.prepareStatement(insertTenantAdministrator);
+        stat.setString(1, tenantAdministrator.getUserID());
+        stat.setString(2, tenantAdministrator.getName());
+        stat.setString(3, permissionList);
+        stat.setString(4, roleList);
+        stat.setString(5, permissionPool);
+        stat.setString(6, rolePool);
+        stat.setString(7, tenantID);
+        int count = stat.executeUpdate();
+        if (verbose) {
+            if (count == 1) {
+                System.out.println("Insert TenantAdministrator successfully!");
+                // print the tenantAdministratorID and tenantAdministratorName
+                System.out.println("\tID: " + tenantAdministrator.getUserID());
+                System.out.println("\tName: " + tenantAdministrator.getName());
+            } else {
+                System.out.println("Insert TenantAdministrator failed!");
+            }
+        }
+        stat.close();
+        con.close();
+    }
+    // TODO: insert_TenantUser
+    private static void insert_TenantUser(Tenant tenantUser, String tenantID, boolean verbose) throws Exception {
+        // get the tenantList from the tenantUser object and convert it to a string
+        String permissionPool = "";
+        if (tenantUser.getPermissionPool() != null) {
+            for (Permission permission : tenantUser.getPermissionPool()) {
+                permissionPool += permission.getPermissionID() + ";";
+            }
+        }
+        // get the serviceList from the tenantUser object and convert it to a string
+        String rolePool = "";
+        if (tenantUser.getRolePool() != null) {
+            for (Role role : tenantUser.getRolePool()) {
+                rolePool += role.getRoleID() + ";";
+            }
+        }
+        // get the permissionList from the tenantUser object and convert it to a string
+        String permissionList = "";
+        if (tenantUser.getPermissionList() != null) {
+            for (Permission permission : tenantUser.getPermissionList()) {
+                permissionList += permission.getPermissionID() + ";";
+            }
+        }
+        // get the roleList from the tenantUser object and convert it to a string
+        String roleList = "";
+        if (tenantUser.getRoleList() != null) {
+            for (Role role : tenantUser.getRoleList()) {
+                roleList += role.getRoleID() + ";";
+            }
+        }
+
+        // insert the tenantUser into the table
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String insertTenantUser = "INSERT INTO TenantUser VALUES (?,?,?,?,?,?,?);";
+        PreparedStatement stat = con.prepareStatement(insertTenantUser);
+        stat.setString(1, tenantUser.getUserID());
+        stat.setString(2, tenantUser.getName());
+        stat.setString(3, permissionList);
+        stat.setString(4, roleList);
+        stat.setString(5, permissionPool);
+        stat.setString(6, rolePool);
+        stat.setString(7, tenantID);
+        int count = stat.executeUpdate();
+        if (verbose) {
+            if (count == 1) {
+                System.out.println("Insert TenantUser successfully!");
+                // print the tenantUserID and tenantUserName
+                System.out.println("\tID: " + tenantUser.getUserID());
+                System.out.println("\tName: " + tenantUser.getName());
+            } else {
+                System.out.println("Insert TenantUser failed!");
+            }
+        }
         stat.close();
         con.close();
     }
 
 
-    // TODO: insert_functional_permission
-    // TODO: insert_data_permission
-    // TODO: insert_role
-    // TODO: insert_service
-    // TODO: insert_Tenant
-    // TODO: insert_TenantAdministrator
-    // TODO: insert_TenantUser
-
-
-
-
-
 
     // Methods to select data from tables
-    // TODO: select_permissions
+    // (DONE) select_permissions
     public static Map<String, Permission> select_permissions(String permissionType) throws Exception {
         Class.forName(JDBC_DRIVER);
         Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -279,8 +615,11 @@ public class Database {
                 // split the dataOperationList by ';' and change every element into DataOperation
                 String[] dataOperations = dataOperationList.split(";");
                 HashSet<DataOperation> _dataOperationList = new HashSet<>();
-                for (String dataOperation : dataOperations) {
-                    _dataOperationList.add(DataOperation.valueOf(dataOperation));
+                // If the dataOperationList is not empty, add the dataOperation into the _dataOperationList
+                if (!dataOperationList.equals("")) {
+                    for (String dataOperation : dataOperations) {
+                        _dataOperationList.add(DataOperation.valueOf(dataOperation));
+                    }
                 }
                 Permission permission = new DataPermission(permissionID, permissionName, dataLocation, _dataOperationList);
                 permissionMap.put(permissionID, permission);
@@ -291,6 +630,70 @@ public class Database {
         stat.close();
         con.close();
         return permissionMap;
+    }
+    // (DONE) select_roles
+    public static Map<String, Role> select_roles() throws Exception {
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String selectRole = "SELECT * FROM Role;";
+        Statement stat = con.createStatement();
+        ResultSet rs = stat.executeQuery(selectRole);
+        Map<String, Role> roleMap = new HashMap<>();
+        while (rs.next()) {
+            String roleID = rs.getString("roleID");
+            String roleName = rs.getString("roleName");
+            String permissionList = rs.getString("permissionList");
+            HashSet<Permission> _permissionList = new HashSet<>();
+            if (!permissionList.equals("")) {
+                String[] permissions = permissionList.split(";");
+                for (String permission : permissions) {
+                    _permissionList.add(GlobalPermission.getPermissionByID(permission));
+                }
+            }
+            Role role = new Role(roleID, roleName, _permissionList);
+            roleMap.put(roleID, role);
+        }
+        rs.close();
+        stat.close();
+        con.close();
+        return roleMap;
+    }
+    // select_services
+    public static Map<String, Service> select_services() throws Exception {
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String selectService = "SELECT * FROM Service;";
+        Statement stat = con.createStatement();
+        ResultSet rs = stat.executeQuery(selectService);
+        Map<String, Service> serviceMap = new HashMap<>();
+        while (rs.next()) {
+            String serviceID = rs.getString("serviceID");
+            String serviceName = rs.getString("serviceName");
+            String roleList = rs.getString("roleList");
+            String permissionList = rs.getString("permissionList");
+            String price = rs.getString("price");
+
+            HashSet<Role> _roles = new HashSet<>();
+            HashSet<Permission> _permissions = new HashSet<>();
+            if (!permissionList.equals("")) {
+                String[] _permissionList = permissionList.split(";");
+                for (String permission : _permissionList) {
+                    _permissions.add(GlobalPermission.getPermissionByID(permission));
+                }
+            }
+            if (!roleList.equals("")) {
+                String[] _roleList = roleList.split(";");
+                for (String role : _roleList) {
+                    _roles.add(GlobalRole.getRoleByID(role));
+                }
+            }
+            Service service = new Service(serviceID, serviceName, _permissions, _roles, price);
+            serviceMap.put(serviceID, service);
+        }
+        rs.close();
+        stat.close();
+        con.close();
+        return serviceMap;
     }
 
 
@@ -306,17 +709,162 @@ public class Database {
         create_Role_table();
         create_Service_table();
     }
-
-    // TODO: initialize
-    public static void initialize() {
-        // Prepare test data
-
+    // TODO: restore the database
+    public static void restore() throws Exception {
         // Insert the data into the database
+        // Insert Functional Permissions into the database
+        for (int i = 0; i < 100; i ++) {
+            HashSet<String> testFunctionIDList = new HashSet<>();
+            // Generate a random number between 1 and 20
+            int functionNumber = (int) (Math.random() * 20);
+            for (int j = 0; j < functionNumber; j ++) {
+                // generate a random functionID
+                int functionID = (int) (Math.random() * 100);
+                testFunctionIDList.add("func" + Integer.toString(functionID));
+            }
+            // Generate a random PermissionLevel
+            int permissionLevel = (int) (Math.random() * 3);
+            // Transform the permissionLevel into PermissionLevel
+            PermissionLevel testPermissionLevel = PermissionLevel.values()[permissionLevel];
+            FunctionalPermission testFunctionalPermission = new FunctionalPermission("FUNC_PER" + Integer.toString(i), "func_permission" + Integer.toString(i), testFunctionIDList, testPermissionLevel);
+            insert_FunctionalPermission(testFunctionalPermission, false);
+        }
 
+        // Insert Data Permissions into the database
+        for (int i = 0; i < 100; i ++) {
+            HashSet<DataOperation> testDataOperationList = new HashSet<>();
+            // Generate several data operations without duplication
+            int dataOperationNumber = (int) (Math.random() * 5);
+            for (int j = 0; j < dataOperationNumber; j ++) {
+                // generate a random data operation whose index ranges from 0 to 3 (including both ends)
+                int dataOperation = (int) (Math.random() * 4);
+                testDataOperationList.add(DataOperation.values()[dataOperation]);
+            }
+            DataPermission testDataPermission = new DataPermission("DATA_PER" + Integer.toString(i), "data_permission" + Integer.toString(i), "data_location" + Integer.toString(i), testDataOperationList);
+            insert_DataPermission(testDataPermission, false);
+        }
+
+        // Initialize the GlobalPermission
+        GlobalPermission.Init(false);
+
+        // Insert Roles into the database
+        for (int i = 0; i < 50; i ++) {
+            // Generate a random number between 1 and 20
+            int permissionNumber = (int) (Math.random() * 20 + 1);
+            HashSet<Permission> testPermissionList = new HashSet<>();
+            for (int j = 0; j < permissionNumber; j ++) {
+                // Generate a random number between 0 and 1
+                int permissionType = (int) (Math.random() * 2);
+                if (permissionType == 0) {
+                    // Generate a random functional permission
+                    int functionalPermissionID = (int) (Math.random() * 10);
+                    testPermissionList.add(GlobalPermission.getPermissionByID("FUNC_PER" + Integer.toString(functionalPermissionID)));
+                } else {
+                    // Generate a random data permission
+                    int dataPermissionID = (int) (Math.random() * 10);
+                    testPermissionList.add(GlobalPermission.getPermissionByID("DATA_PER" + Integer.toString(dataPermissionID)));
+                }
+            }
+            Role testRole = new Role("ROLE" + Integer.toString(i), "role" + Integer.toString(i), testPermissionList);
+            insert_Role(testRole, false);
+        }
+
+        // Initialize the GlobalRole
+        GlobalRole.Init(false);
+
+        // Insert Services into the database
+        for (int i = 0; i < 50; i ++) {
+            // Generate a random number between 1 and 20
+            int roleNumber = (int) (Math.random() * 20 + 1);
+            HashSet<Role> testRoleList = new HashSet<>();
+            for (int j = 0; j < roleNumber; j ++) {
+                // Generate a random role
+                int roleID = (int) (Math.random() * 10);
+                testRoleList.add(GlobalRole.getGlobalRoleMap().get("ROLE" + Integer.toString(roleID)));
+            }
+            // Generate a random number for permissions
+            int permissionNumber = (int) (Math.random() * 20 + 1);
+            HashSet<Permission> testPermissionList = new HashSet<>();
+            for (int j = 0; j < permissionNumber; j ++) {
+                // Generate a random number between 0 and 1
+                int permissionType = (int) (Math.random() * 2);
+                if (permissionType == 0) {
+                    // Generate a random functional permission
+                    int functionalPermissionID = (int) (Math.random() * 10);
+                    testPermissionList.add(GlobalPermission.getPermissionByID("FUNC_PER" + Integer.toString(functionalPermissionID)));
+                } else {
+                    // Generate a random data permission
+                    int dataPermissionID = (int) (Math.random() * 10);
+                    testPermissionList.add(GlobalPermission.getPermissionByID("DATA_PER" + Integer.toString(dataPermissionID)));
+                }
+            }
+            // Generate a random price
+            int price = (int) (Math.random() * 100);
+
+            Service testService = new Service("SERVICE" + Integer.toString(i), "service" + Integer.toString(i), testPermissionList, testRoleList, Integer.toString(price));
+            insert_Service(testService, false);
+        }
+
+        // Initialize the GlobalService
+        GlobalService.Init(false);
+
+        // Insert PlatformAdministrator into the database
+        // Generate 2 platformAdministrators, with the first one contains first 50 permissions in his permissionPool, first 25 Roles in his rolePool, first 25 Services in his servicePool
+        // and the second one contains the last 50 permissions in his permissionPool, last 25 Roles in his rolePool, last 25 Services in his servicePool
+        for (int i = 0; i < 2; i ++) {
+            HashSet<Permission> testPermissionPool = new HashSet<>();
+            HashSet<Permission> testPermissionList = new HashSet<>();
+            HashSet<Role> testRolePool = new HashSet<>();
+            HashSet<Role> testRoleList = new HashSet<>();
+            HashSet<Service> testServicePool = new HashSet<>();
+            for (int j = 0; j < 10; j ++) {
+                testPermissionPool.add(GlobalPermission.getPermissionByID("FUNC_PER" + Integer.toString(j + i * 50)));
+                testPermissionPool.add(GlobalPermission.getPermissionByID("DATA_PER" + Integer.toString(j + i * 50)));
+                testPermissionList.add(GlobalPermission.getPermissionByID("FUNC_PER" + Integer.toString(j + i * 50)));
+                testPermissionList.add(GlobalPermission.getPermissionByID("DATA_PER" + Integer.toString(j + i * 50)));
+            }
+            for (int j = 0; j < 15; j ++) {
+                testRolePool.add(GlobalRole.getGlobalRoleMap().get("ROLE" + Integer.toString(j + i * 25)));
+                testRoleList.add(GlobalRole.getGlobalRoleMap().get("ROLE" + Integer.toString(j + i * 25)));
+            }
+            for (int j = 0; j < 15; j ++) {
+                testServicePool.add(GlobalService.getServiceByID("SERVICE" + Integer.toString(j + i * 25)));
+            }
+            PlatformAdministrator testPlatformAdministrator = new PlatformAdministrator("PLATFORM_ADMIN" + Integer.toString(i), "platformAdministrator" + Integer.toString(i), testPermissionPool, testRolePool, testServicePool, testPermissionList, testRoleList);
+            insert_PlatformAdministrator(testPlatformAdministrator, false);
+        }
+
+//        // Insert some Tenants into the database, note that the tenants' permissionPool/List, rolePool/List, serviceList, tenantAdministratorList, tenantUserList are all empty
+//        for (int i = 0; i < 10; i ++) {
+//            Tenant testTenant = new Tenant("TENANT" + Integer.toString(i), "tenant" + Integer.toString(i), new HashSet<>(), new HashSet<>(), new HashSet<>(), new HashSet<>(), new HashSet<>(), new HashSet<>(), new HashSet<>());
+//            insert_Tenant(testTenant, false);
+//        }
+//        // Insert some TenantAdministrators into the database, note that the tenantAdministrators' permissionPool/List, rolePool/List are all empty
+//        for (int i = 0; i < 10; i ++) {
+//            TenantAdministrator testTenantAdministrator = new TenantAdministrator("TENANT_ADMIN" + Integer.toString(i), "tenantAdministrator" + Integer.toString(i), new HashSet<>(), new HashSet<>(), new HashSet<>(), new HashSet<>());
+//            insert_TenantAdministrator(testTenantAdministrator, "TENANT" + Integer.toString(i % 10), false);
+//        }
+//
+//        // Insert some TenantUsers into the database, note that the tenantUsers' permissionPool/List, rolePool/List are all empty
+//        for (int i = 0; i < 30; i ++) {
+//            TenantUser testTenantUser = new TenantUser("TENANT_USER" + Integer.toString(i), "tenantUser" + Integer.toString(i), new HashSet<>(), new HashSet<>(), new HashSet<>(), new HashSet<>());
+//            insert_TenantUser(testTenantUser, "TENANT" + Integer.toString(i % 10),false);
+//        }
+    }
+
+    public static void Init() throws Exception {
+        // Initialize the GlobalPermission
+        GlobalPermission.Init(false);
+
+        // Initialize the GlobalRole
+        GlobalRole.Init(false);
+
+        // Initialize the GlobalService
+        GlobalService.Init(false);
     }
     public static void main(String[] args) throws Exception {
         create();
-        insert_PlatFormAdministrator(new PlatformAdministrator("admin", "123", new HashSet<>(), new HashSet<>(), new HashSet<>(), new HashSet<>(), new HashSet<>()));
+        restore();
     }
 
 }
