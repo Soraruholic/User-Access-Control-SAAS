@@ -318,7 +318,7 @@ public class Database {
         con.close();
     }
     // (DONE) insert_role
-    private static void insert_Role(Role role, boolean verbose) throws Exception {
+    public static void insert_Role(Role role, boolean verbose) throws Exception {
         // get the permissionList from the role object and convert it to a string
         String permissionList = "";
         for (Permission permission : role.getPermissionList()) {
@@ -583,7 +583,6 @@ public class Database {
     }
 
 
-
     // Methods to select data from tables
     // (DONE) select_permissions
     public static Map<String, Permission> select_permissions(String permissionType) throws Exception {
@@ -696,6 +695,94 @@ public class Database {
         return serviceMap;
     }
 
+    // select platform administrator by ID
+    public static PlatformAdministrator select_platformAdministrator_byID(String platformAdministratorID) throws Exception {
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String selectPlatformAdministrator = "SELECT * FROM PlatformAdministrator WHERE userID = '" + platformAdministratorID + "';";
+        Statement stat = con.createStatement();
+        ResultSet rs = stat.executeQuery(selectPlatformAdministrator);
+        PlatformAdministrator platformAdministrator = null;
+        if (rs.next()) {
+            String userID = rs.getString("userID");
+            String name = rs.getString("name");
+            String permissionList = rs.getString("permissionList");
+            String roleList = rs.getString("roleList");
+            String permissionPool = rs.getString("permissionPool");
+            String rolePool = rs.getString("rolePool");
+            String servicePool = rs.getString("servicePool");
+            HashSet<Permission> _permissionList = new HashSet<>();
+            HashSet<Role> _roleList = new HashSet<>();
+            HashSet<Permission> _permissionPool = new HashSet<>();
+            HashSet<Role> _rolePool = new HashSet<>();
+            HashSet<Service> _servicePool = new HashSet<>();
+            if (!permissionList.equals("")) {
+                String[] permissions = permissionList.split(";");
+                for (String permission : permissions) {
+                    _permissionList.add(GlobalPermission.getPermissionByID(permission));
+                }
+            }
+            if (!roleList.equals("")) {
+                String[] roles = roleList.split(";");
+                for (String role : roles) {
+                    _roleList.add(GlobalRole.getRoleByID(role));
+                }
+            }
+            if (!permissionPool.equals("")) {
+                String[] permissions = permissionPool.split(";");
+                for (String permission : permissions) {
+                    _permissionPool.add(GlobalPermission.getPermissionByID(permission));
+                }
+            }
+            if (!rolePool.equals("")) {
+                String[] roles = rolePool.split(";");
+                for (String role : roles) {
+                    _rolePool.add(GlobalRole.getRoleByID(role));
+                }
+            }
+            if (!servicePool.equals("")) {
+                String[] services = servicePool.split(";");
+                for (String service : services) {
+                    _servicePool.add(GlobalService.getServiceByID(service));
+                }
+            }
+            platformAdministrator = new PlatformAdministrator(name, userID, _permissionPool, _rolePool, _servicePool, _permissionList, _roleList);
+        }
+        rs.close();
+        stat.close();
+        con.close();
+        return platformAdministrator;
+    }
+
+
+    // Methods to update the database
+    public static void update_platformAdministrator_rolePool(PlatformAdministrator platformAdministrator) throws Exception {
+        // change the RolePool into a string
+        String rolePool = "";
+        for (Role role : platformAdministrator.getRolePool()) {
+            rolePool += role.getRoleID() + ";";
+        }
+        // update the database
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String updatePlatformAdministrator = "UPDATE PlatformAdministrator SET rolePool = '" + rolePool + "' WHERE userID = '" + platformAdministrator.getUserID() + "';";
+        Statement stat = con.createStatement();
+        stat.executeUpdate(updatePlatformAdministrator);
+        stat.close();
+        con.close();
+    }
+
+
+    // Methods to delete data of the table
+    public static void delete_role_from_Role(String roleID) throws Exception {
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String deleteRole = "DELETE FROM Role WHERE roleID = '" + roleID + "';";
+        Statement stat = con.createStatement();
+        stat.executeUpdate(deleteRole);
+        stat.close();
+        con.close();
+    }
 
 
     // create tables in the database (DONE)

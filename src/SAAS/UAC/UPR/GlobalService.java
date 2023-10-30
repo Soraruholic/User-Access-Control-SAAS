@@ -16,7 +16,7 @@ public class GlobalService {
         if (globalServiceMap.containsKey(serviceID)) {
             return globalServiceMap.get(serviceID);
         } else {
-            throw new Exception("Service not found");
+            return null;
         }
     }
 
