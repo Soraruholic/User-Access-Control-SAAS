@@ -12,18 +12,6 @@ public class TenantAdministrator extends Tenant {
     public TenantAdministrator(String name, String userID, HashSet<Permission> permissionList, HashSet<Role> roleList, HashSet<Permission> permissionPool, HashSet<Role> rolePool) {
         super(name, userID, null, null, null, permissionList, roleList, permissionPool, rolePool);
     }
-    public HashSet<Permission> getPermissionPool() {
-        return permissionPool;
-    }
-    public HashSet<Role> getRolePool() {
-        return rolePool;
-    }
-    public HashSet<Permission> getPermissionList() {
-        return permissionList;
-    }
-    public HashSet<Role> getRoleList() {
-        return roleList;
-    }
 
     // Operations for Permission
     public void addPermission(Permission permission){

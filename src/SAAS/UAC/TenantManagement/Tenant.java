@@ -12,9 +12,9 @@ import java.util.HashSet;
 import java.util.List;
 
 public class Tenant extends User{
-    HashSet<Service> serviceList;
-    HashSet<TenantAdministrator> tenantAdministratorList;
-    HashSet<TenantUser> tenantUserList;
+    protected HashSet<Service> serviceList;
+    protected HashSet<TenantAdministrator> tenantAdministratorList;
+    protected HashSet<TenantUser> tenantUserList;
     public Tenant(String name, String userID, HashSet<Service> serviceList, HashSet<TenantAdministrator> tenantAdministratorList, HashSet<TenantUser> tenantUserList, HashSet<Permission> permissionList, HashSet<Role> roleList, HashSet<Permission> permissionPool, HashSet<Role> rolePool) {
         super(name, userID, permissionList, roleList, permissionPool, rolePool);
         this.serviceList = serviceList;
@@ -22,13 +22,13 @@ public class Tenant extends User{
         this.tenantUserList = tenantUserList;
     }
 
-    HashSet<Service> getServiceList() {
+    public HashSet<Service> getServiceList() {
         return serviceList;
     }
-    HashSet<TenantAdministrator> getTenantAdministratorList() {
+    public HashSet<TenantAdministrator> getTenantAdministratorList() {
         return tenantAdministratorList;
     }
-    HashSet<TenantUser> getTenantUserList() {
+    public HashSet<TenantUser> getTenantUserList() {
         return tenantUserList;
     }
 

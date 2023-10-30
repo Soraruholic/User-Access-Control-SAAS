@@ -1,12 +1,15 @@
 package SAAS.UAC.UPR;
+
+import java.util.HashSet;
+
 public class Role {
     protected String roleID;
     protected String roleName;
-    protected PermissionLevel permissionLevel;
-    public Role(String roleID, String roleName, PermissionLevel permissionLevel) {
+    protected HashSet<Permission> permissionList;
+    public Role(String roleID, String roleName, HashSet<Permission> permissionList) {
         this.roleID = roleID;
         this.roleName = roleName;
-        this.permissionLevel = permissionLevel;
+        this.permissionList = permissionList;
     }
 
     public String getRoleID() {
@@ -15,7 +18,7 @@ public class Role {
     public String getRoleName() {
         return roleName;
     }
-    public PermissionLevel getPermissionLevel() {
-        return permissionLevel;
+    public HashSet<Permission> getPermissionList() {
+        return permissionList;
     }
 }
