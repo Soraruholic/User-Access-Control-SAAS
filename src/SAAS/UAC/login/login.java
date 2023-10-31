@@ -1,13 +1,20 @@
-package SAAS.UAC.log;
+package SAAS.UAC.login;
 
 
-import SAAS.UAC.UPR.User;
-
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-import java.security.*;
-import java.nio.charset.StandardCharsets;
+
+
 
 
 
@@ -19,7 +26,7 @@ import java.nio.charset.StandardCharsets;
 
 public class login {
     public static void main(String[] args) {
-        ArrayList<User>list = new ArrayList<>();
+        ArrayList<LUser>list = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("欢迎来到SAAS");
@@ -27,7 +34,7 @@ public class login {
 
             String choose = sc.next();
             switch (choose){
-                case "1"-> login(list);
+                case "1"-> log(list);
                 case "2"-> register(list);
                 case "3"-> forgotpassword(list);
                 case "4"-> {
@@ -41,7 +48,7 @@ public class login {
         }
     }
 
-    private static void forgotpassword(ArrayList<User>list) {
+    private static void forgotpassword(ArrayList<LUser>list) {
         // System.out.println("忘记密码");
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入用户名"
@@ -58,7 +65,7 @@ public class login {
         String phonenumber = sc.next();
 
         int index = findindex(list,username);
-        User user = list.get(index);
+        LUser user = list.get(index);
 
         if(!(user.getPhonenumber().equalsIgnoreCase(phonenumber))){
             System.out.println("输入有误,不能修改");
@@ -79,14 +86,14 @@ public class login {
                 System.out.println("两次密码输入不一致,重新输入");
             }
         }
-        user.setPassword(md5(password));
+        user.setPassword(sha(password));
         System.out.println("修改成功");
 
     }
 
-    private static int findindex(ArrayList<User> list, String username) {
+    private static int findindex(ArrayList<LUser> list, String username) {
         for (int i = 0; i < list.size(); i++) {
-            User user = list.get(i);
+            LUser user = list.get(i);
             if(user.getUsername().equals(username)){
                 return i;
             }
@@ -94,7 +101,7 @@ public class login {
         return -1;
     }
 
-    private static void register(ArrayList<User>list) {
+    private static void register(ArrayList<LUser>list) {
         // System.out.println("注册");
         //用户信息添加到集合
         Scanner sc = new Scanner(System.in);
@@ -138,17 +145,17 @@ public class login {
                 break;
             }
         }
-//        //3.键盘录入身份证
-//        String personID;
+        //3.键盘录入邮箱
+        String email;
 //        while (true) {
-//            System.out.println("请输入身份证号");
-//            personID = sc.next();
-//            boolean flag = checkPersonID(personID);
+            System.out.println("请输入邮箱号");
+            email = sc.next();
+//            boolean flag = checkEmail(email);
 //            if(flag){
-//                System.out.println("身份证正确");
+//                System.out.println("邮箱号正确");
 //                break;
 //            }else{
-//                System.out.println("身份证输入错误,请重新输入");
+//                System.out.println("邮箱号输入错误,请重新输入");
 //            }
 //        }
         //4.键盘录入手机号
@@ -165,9 +172,9 @@ public class login {
 
             }
         }
-        String passwordMd5 = md5(password);
+        String password_sha = sha(password);
         //数据放入对象
-        User u = new User(username, null,null,null,null,null, passwordMd5, phoneNumber) {
+        LUser u = new LUser(username, null,null,null,null,null, email, password_sha, phoneNumber) {
         };
         //放入集合
         list.add(u);
@@ -176,22 +183,24 @@ public class login {
     }
 
 
-    public static String md5(String data) {
+    public static String sha(String data) {
         try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] md5 = md.digest(data.getBytes(StandardCharsets.UTF_8));
-
-            // 将处理后的字节转成 16 进制，得到最终 32 个字符
-            StringBuilder sb = new StringBuilder();
-            for (byte b : md5) {
-                sb.append(String.format("%02x", b));
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hash = md.digest(data.getBytes());
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) hexString.append('0');
+                hexString.append(hex);
             }
-            return sb.toString();
+            return hexString.toString();
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        return "";
+        return null;
     }
+
+
 
     private static boolean checkPhonenumber(String phoneNumber) {
         if(phoneNumber.length()!= 11){
@@ -209,31 +218,30 @@ public class login {
         }return true;
     }
 
-//    private static boolean checkPersonID(String personID) {
-//        if(personID.length()!=18){
-//            return false;
-//        }
+//    private static boolean checkEmail(String email) {
+//
 //        //不能0开头
 //        //boolean flag = personID.startsWith("0");
-//        if(personID.startsWith("0")){
+//        if(email.startsWith("0")){
 //            return false;
 //        }
 //        //前面17位是数字
-//        for (int i = 0; i < personID.length()-1; i++) {
-//            char c = personID.charAt(i);
-//            if(!(c>= '0' && c<='9')){
+//        for (int i = 0; i < email.length()-1; i++) {
+//            char c = email.charAt(i);
+//            if(!((c>= '0' && c<='9')||(c>='a'&&c<='z')||(c>='A'&&c<='Z'))){
+//
 //                return false;
 //            }
 //        }
 //        //最后一位可以是数字或者x
-//        char endchar = personID.charAt(personID.length()-1);
+//        char endchar = email.charAt(email.length()-1);
 //        return (endchar >= '0' && endchar <= '9') || (endchar == 'x') || (endchar == 'X');
 //    }
 
-    private static boolean contains(ArrayList<User> list, String username) {
-        for (SAAS.UAC.UPR.User user : list) {
-            String rightname = user.getUsername();
-            if (rightname.equals(username)) {
+    private static boolean contains(ArrayList<LUser> list, String username) {
+        for (SAAS.UAC.login.LUser user : list) {
+            String rightname = user.getEmail();
+            if (rightname.equals(user.email)) {
                 return true;
             }
         }
@@ -265,53 +273,80 @@ public class login {
         return count >0;
     }
 
-    private static void login(ArrayList<User>list) {
+    private static void log(ArrayList<LUser>list) {
         // System.out.println("登录");
         Scanner sc = new Scanner(System.in);
-        System.out.println("请输入用户名");
-        String username = sc.next();
+        System.out.println("请输入邮箱");
+        String email = sc.next();
         //判断是否存在
-        boolean flag = contains(list,username);
+        boolean flag = contains(list,email);
         if(!flag){
-            System.out.println("用户"+username +"没有注册");
+            System.out.println("用户"+email +"没有注册");
             return;
         }
 
         System.out.println("请输入密码");
         String password = sc.next();
 
-        while (true) {
             String rightcode = getCode();
             System.out.println("当前验证码为"+rightcode);
+
+
+//	创建邮件对象
+            try {
+                Session session=Mail.createSession();
+                System.out.println(session);
+
+                //2.创建邮件对象
+                MimeMessage message=new MimeMessage(session);
+                //设置邮件主题
+                message.setSubject("SAAS登录验证码");
+                //设置邮件内容
+                message.setText(rightcode);
+                //设置发件人
+                message.setFrom(new InternetAddress("rdammt766@163.com"));
+                //设置收件人
+                message.setRecipient(Message.RecipientType.TO, new InternetAddress(email));
+
+                //3.发送邮件
+                Transport.send(message);
+            } catch (AddressException e) {
+                e.printStackTrace();
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
+
+
+
             System.out.println("请输入验证码");
             String code = sc.next();
 
             if(code.equalsIgnoreCase(rightcode)){
                 System.out.println("输入正确");
-                break;
             }
             else{
                 System.out.println("验证码错误");
 
             }
-        }
+
         //定义一个方法,判断用户名和密码
         //封装,零散的数据封装为对象
-        User userinfo = new User(username, null,null,null,null,null, md5(password), null) {
+        LUser userinfo = new LUser(null, null,null,null,null,null,email, sha(password), null) {
         };
         boolean result = checkuserinfo(list,userinfo);
         if(result){
             System.out.println("登录成功");
+            System.out.println(userinfo.password_sha);
         }else {
-            System.out.println("登录失败,密码或用户名错误");
+            System.out.println("登录失败,密码或账户错误");
 
         }
     }
 
-    private static boolean checkuserinfo(ArrayList<User> list, User userinfo) {
-        //遍历
-        for (SAAS.UAC.UPR.User user : list) {
-            if (user.getUsername().equals(userinfo.getUsername()) && (user.getPassword().equals(userinfo.getPassword()))) {
+    private static boolean checkuserinfo(ArrayList<LUser> list, LUser userinfo) {
+        //遍历2
+        for (SAAS.UAC.login.LUser user : list) {
+            if (user.getEmail().equals(userinfo.getEmail()) && (user.getPassword().equals(userinfo.getPassword()))) {
                 return true;
             }
         }
