@@ -297,7 +297,7 @@ public class UserAccessControl {
     // TODO : 完成角色剥夺
     public static void deprive_role(User current_user, User deprived_user, Role role) throws Exception {
         try{
-            //0.管理员是否有分配权限，没有则抛出异常
+            //0.管理员是否有剥夺权限，没有则抛出异常
             check_user_permission(current_user,GlobalVariables.ROLE_DEPRIVE_CHECK);
             //1.用户ID是否为NULL/空，空则抛出异常
             check_targetUser_null(deprived_user);
@@ -322,7 +322,7 @@ public class UserAccessControl {
             check_role_null(role);
             //4.角色是否在角色池中，没有则抛出异常
             check_role_in_pool(current_user,role);
-            //5.角色是否已在用户roleList中，有则抛出异常
+            //5.角色是否已在用户roleList中，无则抛出异常
             if(!role_in_list(deprived_user,role)){
                 throw new IllegalArgumentException("The role is not exists in the role list of the user");
             }
