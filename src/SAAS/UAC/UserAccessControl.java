@@ -1,7 +1,10 @@
 package SAAS.UAC;
 import SAAS.Database.Database;
 import SAAS.UAC.TenantManagement.PlatformAdministrator;
+import SAAS.UAC.TenantManagement.Tenant;
 import SAAS.UAC.UPR.*;
+import SAAS.UAC.UserManagement.TenantAdministrator;
+import SAAS.UAC.UserManagement.TenantUser;
 import SAAS.Utils.GlobalVariables;
 
 import java.util.ArrayList;
@@ -97,7 +100,7 @@ public class UserAccessControl {
                 Database.update_platformAdministrator_rolePool((PlatformAdministrator) current_user);
                 break;
 //            case "Tenant":
-//                Database.update_platformManager_rolePool(current_user);
+//                Database.update_Tenant_rolePool(current_user);
 //                break;
 //            case "TenantAdministrator":
 //                Database.update_platformStaff_rolePool(current_user);
@@ -186,5 +189,152 @@ public class UserAccessControl {
                 throw new Exception("The user type is not supported");
         }
     }
+
+    // TODO : 完成角色分配
+    public static void assign_role(User current_user, User assigned_user, Role role) throws Exception {
+        try{
+            //0.管理员是否有分配权限，没有则抛出异常
+            check_user_permission(current_user,GlobalVariables.ROLE_ASSIGN_CHECK);
+            //1.用户ID是否为NULL/空，空则抛出异常
+            check_targetUser_null(assigned_user);
+            //2.用户是否在用户池中，没有则抛出异常
+            //
+            // 区分平台和租户
+            String[] user_types = current_user.getClass().toString().split("\\.");
+            String user_type=user_types[user_types.length - 1];
+
+            if (user_type=="TenantAdministrator") {
+                check_tenantUser_in_pool((TenantAdministrator) current_user,(TenantUser) assigned_user);
+            }
+            //平台不处理
+//            else-if (user_type=="PlatformAdministrator"){
+//
+//            } else {
+//                throw new Exception("The user type is not supported");
+//            }
+
+
+            //3.角色ID是否为NULL/空，空则抛出异常
+            check_role_null(role);
+            //4.角色是否在角色池中，没有则抛出异常
+            check_role_in_pool(current_user,role);
+            //5.角色是否已在用户roleList中，有则抛出异常
+            if(role_in_list(assigned_user,role)){
+                throw new IllegalArgumentException("The role already exists in the role list of the user");
+            }
+
+        }catch (Exception e) {
+            throw e;
+        }
+        //检查完成，在对应user.roleList中添加
+        assigned_user.getRoleList().add(role);
+        //TODO:修改数据库
+        //
+
+    }
+
+    public static void check_user_permission(User current_user, String Permission) throws Exception{
+        if (!current_user.getPermissionPool().contains(GlobalPermission.getPermissionByID(Permission))){
+            throw new IllegalArgumentException("The administrator does not have the permission "+Permission);
+        }
+    }
+
+    public static void check_role_null(Role role) throws Exception{
+        String role_ID=role.getRoleID();
+        String role_name=role.getRoleName();
+        // check whether the role_ID is null, throw an exception if it is null
+        if (role_ID == null){
+            throw new IllegalArgumentException("The role_ID is null");
+        }
+        // check whether the role name is null, throw an exception if it is null
+        if (role_name == null){
+            throw new IllegalArgumentException("The role name is null");
+        }
+        // check whether the roel_ID is an empty string, throw an exception if it is an empty string
+        if (role_ID.equals("")){
+            throw new IllegalArgumentException("The role_ID is an empty string");
+        }
+        // check whether the role_name is an empty string, throw an exception if it is an empty string
+        if (role_name.equals("")){
+            throw new IllegalArgumentException("The role_name is an empty string");
+        }
+    }
+    public static void check_targetUser_null(User targetUser) throws Exception{
+        String user_ID=targetUser.getUserID();
+        String user_name=targetUser.getName();
+        if(user_ID==null){
+            throw new IllegalArgumentException("The user_ID is null");
+        }
+        if (user_name==null){
+            throw new IllegalArgumentException("The user_name is null");
+        }
+        // check whether the user_ID is an empty string, throw an exception if it is an empty string
+        if (user_ID.equals("")){
+            throw new IllegalArgumentException("The user_ID is an empty string");
+        }
+        // check whether the user_name is an empty string, throw an exception if it is an empty string
+        if (user_name.equals("")){
+            throw new IllegalArgumentException("The user_name is an empty string");
+        }
+
+    }
+
+    public static void check_role_in_pool(User current_user,Role role) throws Exception{
+        if(!current_user.getRolePool().contains(role)){
+            throw new IllegalArgumentException("The role: " + role.getRoleID() +" does not exist in the role pool of you");
+        }
+    }
+
+    public static void check_tenantUser_in_pool(TenantAdministrator current_user, TenantUser target) throws Exception{
+        if(!current_user.getTenantUserList().contains(target)){
+            throw new IllegalArgumentException("The user: " + target.getName() +" does not exist in the user pool of you");
+        }
+    }
+    public static boolean role_in_list(User user, Role role){
+        return user.getRoleList().contains(role);
+    }
+
+    // TODO : 完成角色剥夺
+    public static void deprive_role(User current_user, User deprived_user, Role role) throws Exception {
+        try{
+            //0.管理员是否有分配权限，没有则抛出异常
+            check_user_permission(current_user,GlobalVariables.ROLE_DEPRIVE_CHECK);
+            //1.用户ID是否为NULL/空，空则抛出异常
+            check_targetUser_null(deprived_user);
+            //2.用户是否在用户池中，没有则抛出异常
+            //
+            // 区分平台和租户
+            String[] user_types = current_user.getClass().toString().split("\\.");
+            String user_type=user_types[user_types.length - 1];
+
+            if (user_type=="TenantAdministrator") {
+                check_tenantUser_in_pool((TenantAdministrator) current_user,(TenantUser) deprived_user);
+            }
+            //平台不处理
+//            else-if (user_type=="PlatformAdministrator"){
+//
+//            } else {
+//                throw new Exception("The user type is not supported");
+//            }
+
+
+            //3.角色ID是否为NULL/空，空则抛出异常
+            check_role_null(role);
+            //4.角色是否在角色池中，没有则抛出异常
+            check_role_in_pool(current_user,role);
+            //5.角色是否已在用户roleList中，有则抛出异常
+            if(!role_in_list(deprived_user,role)){
+                throw new IllegalArgumentException("The role is not exists in the role list of the user");
+            }
+
+        }catch (Exception e) {
+            throw e;
+        }
+        //检查完成，在对应user.roleList中删除
+        deprived_user.getRoleList().remove(role);
+        //TODO:修改数据库
+        //
+    }
+
 
 }
