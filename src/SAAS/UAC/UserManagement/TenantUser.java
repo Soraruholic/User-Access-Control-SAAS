@@ -10,12 +10,4 @@ public class TenantUser extends Tenant{
     public TenantUser(String name, String userID, HashSet<Permission> permissionList, HashSet<Role> roleList, HashSet<Permission> permissionPool, HashSet<Role> rolePool) {
         super(name, userID, null, null, null, permissionList, roleList, permissionPool, rolePool);
     }
-
-    public HashSet<Permission> getPermissionPool() {
-        return permissionPool;
-    }
-    public HashSet<Role> getRolePool() {
-        return rolePool;
-    }
-
 }
