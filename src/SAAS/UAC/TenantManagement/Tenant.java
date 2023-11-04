@@ -13,9 +13,9 @@ import java.util.List;
 
 public class Tenant extends User{
     protected HashSet<Service> serviceList;
-    protected HashSet<TenantAdministrator> tenantAdministratorList;
-    protected HashSet<TenantUser> tenantUserList;
-    public Tenant(String name, String userID, HashSet<Service> serviceList, HashSet<TenantAdministrator> tenantAdministratorList, HashSet<TenantUser> tenantUserList, HashSet<Permission> permissionList, HashSet<Role> roleList, HashSet<Permission> permissionPool, HashSet<Role> rolePool) {
+    protected HashSet<String> tenantAdministratorList;
+    protected HashSet<String> tenantUserList;
+    public Tenant(String name, String userID, HashSet<Service> serviceList, HashSet<String> tenantAdministratorList, HashSet<String> tenantUserList, HashSet<Permission> permissionList, HashSet<Role> roleList, HashSet<Permission> permissionPool, HashSet<Role> rolePool) {
         super(name, userID, permissionList, roleList, permissionPool, rolePool);
         this.serviceList = serviceList;
         this.tenantAdministratorList = tenantAdministratorList;
@@ -25,10 +25,10 @@ public class Tenant extends User{
     public HashSet<Service> getServiceList() {
         return serviceList;
     }
-    public HashSet<TenantAdministrator> getTenantAdministratorList() {
+    public HashSet<String> getTenantAdministratorList() {
         return tenantAdministratorList;
     }
-    public HashSet<TenantUser> getTenantUserList() {
+    public HashSet<String> getTenantUserList() {
         return tenantUserList;
     }
 

@@ -11,11 +11,6 @@ public abstract class User {
     protected HashSet<Permission> permissionPool;
     protected HashSet<Role> rolePool;
 
-    protected String passwordMd5;
-
-    protected String phonenumber;
-
-
     public User(String name, String userID , HashSet<Permission> permissionList , HashSet<Role> roleList, HashSet<Permission> permissionPool, HashSet<Role> rolePool) {
         this.name = name;
         this.userID = userID;
@@ -23,13 +18,6 @@ public abstract class User {
         this.roleList = roleList;
         this.permissionPool = permissionPool;
         this.rolePool = rolePool;
-        // this.phonenumber = phonenumber;
-        // this.passwordMd5 = passwordMd5;
-    }
-
-
-    public String getName() {
-        return name;
     }
     public String getUserID() {
         return userID;
@@ -46,28 +34,9 @@ public abstract class User {
     public HashSet<Role> getRolePool() {
         return rolePool;
     }
-
-//    public String getUsername() {
-//        return name;
-//    }
-//    public void setUsername(String username) {
-//        this.name = username;
-//    }
-//    public String getPassword() {
-//        return passwordMd5;
-//    }
-//    public void setPassword(String password) {
-//        this.passwordMd5 = password;
-//    }
-//    public void setPersonID(String personID) {
-//        this.personID = personID;
-//    }
-//    public String getPhonenumber() {
-//        return phonenumber;
-//    }
-//    public void setPhonenumber(String phonenumber) {
-//        this.phonenumber = phonenumber;
-//    }
+    public String getName() {
+        return name;
+    }
 }
 
 
