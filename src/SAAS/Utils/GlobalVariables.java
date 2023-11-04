@@ -1,6 +1,11 @@
 package SAAS.Utils;
 
 public class GlobalVariables {
+    public static int REGISTER_SUCCESS = 0;
+    public static int VERIFY_CODE_ERROR = 1;
+    public static int PSW_ERROR = 2;
+    public static int LOGIN_SUCCESS = 3;
+    public static int RESET_PSW_SUCCESS = 4;
     public static String ROLE_ADD_CHECK = "FUNC_PER0";
     public static String ROLE_DELETE_CHECK = "FUNC_PER1";
     public static String ROLE_ASSIGN_CHECK = "FUNC_PER2";

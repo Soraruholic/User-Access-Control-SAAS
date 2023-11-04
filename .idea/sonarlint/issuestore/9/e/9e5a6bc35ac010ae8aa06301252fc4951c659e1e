@@ -1,0 +1,10 @@
+
+
+java:S1319"kThe type of "permissionList" should be an interface such as "Set" rather than the implementation "HashSet".(ŸéÅ·
+{
+java:S1319"eThe type of "roleList" should be an interface such as "Set" rather than the implementation "HashSet".(ŸéÅ·
+ƒ
+java:S1319"mThe return type of this method should be an interface such as "Set" rather than the implementation "HashSet".(«§Æâ
+ˆ
+java:S1319"mThe return type of this method should be an interface such as "Set" rather than the implementation "HashSet".(ƒ¼Ä†úÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ú„Ê

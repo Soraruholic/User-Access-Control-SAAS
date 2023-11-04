@@ -1,0 +1,75 @@
+
+z	java:S135o"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8ª…”Ô¹1
+n	java:S117±"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô¸æ8®…”Ô¹1
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ãÖ ù8µ…”Ô¹1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Œç8¾…”Ô¹1
+D
+java:S2189!""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8µ”Ô¹1
+M
+java:S1135"2Complete the task associated to this TODO comment.(ÖÉÀÑùÿÿÿÿ
+G
+java:S1135"2Complete the task associated to this TODO comment.(ãìĞC
+M
+java:S1135"2Complete the task associated to this TODO comment.(Éõè³üÿÿÿÿ
+M
+java:S1135"2Complete the task associated to this TODO comment.(¶åäıÿÿÿÿ
+H
+java:S1135"2Complete the task associated to this TODO comment.(ÿ÷©
+L	java:S106""+Replace this use of System.out by a logger.(·ìßûÿÿÿÿ8‹”Ô¹1
+L	java:S106#"+Replace this use of System.out by a logger.(š¸·ûÿÿÿÿ8”Ô¹1
+L	java:S106+"+Replace this use of System.out by a logger.(ÛŸê¢üÿÿÿÿ8’”Ô¹1
+L	java:S106/"+Replace this use of System.out by a logger.(‹¿€ªøÿÿÿÿ8””Ô¹1
+]	java:S1256"<This block of commented-out lines of code should be removed.(«±ÿ‰üÿÿÿÿ8›”Ô¹1
+G	java:S1068"+Replace this use of System.out by a logger.(È‡ÕÊ8”Ô¹1
+G	java:S106="+Replace this use of System.out by a logger.(öØÈ¢8£”Ô¹1
+G	java:S106B"+Replace this use of System.out by a logger.(Î÷•†8¥”Ô¹1
+X	java:S125@"<This block of commented-out lines of code should be removed.(™‘öâ8¨”Ô¹1
+G	java:S106I"+Replace this use of System.out by a logger.(‘‰¨ı8±”Ô¹1
+G	java:S106O"+Replace this use of System.out by a logger.(ù†©ó8³”Ô¹1
+L	java:S106Q"+Replace this use of System.out by a logger.(ò¯À—ÿÿÿÿÿ8¶”Ô¹1
+L	java:S106T"+Replace this use of System.out by a logger.(ñÙûîüÿÿÿÿ8º”Ô¹1
+L	java:S106X"+Replace this use of System.out by a logger.(÷Ÿ®òşÿÿÿÿ8»”Ô¹1
+G	java:S106\"+Replace this use of System.out by a logger.(á¦Ğğ8½”Ô¹1
+X	java:S125k"<This block of commented-out lines of code should be removed.(Ñš¶ö8Æ”Ô¹1
+L	java:S106r"+Replace this use of System.out by a logger.(ÔÈÅªıÿÿÿÿ8Ê”Ô¹1
+G	java:S106z"+Replace this use of System.out by a logger.(Ï»ğï8Í”Ô¹1
+M	java:S106€"+Replace this use of System.out by a logger.(Ê€åƒşÿÿÿÿ8Ğ”Ô¹1
+M	java:S106ƒ"+Replace this use of System.out by a logger.(ï³Ûóıÿÿÿÿ8Ò”Ô¹1
+H	java:S106Š"+Replace this use of System.out by a logger.(°¸”¹8Ô”Ô¹1
+H	java:S106Œ"+Replace this use of System.out by a logger.(£Ş…8Ö”Ô¹1
+H	java:S106"+Replace this use of System.out by a logger.(—®¾Ü8Ø”Ô¹1
+M	java:S106’"+Replace this use of System.out by a logger.(şíÿîıÿÿÿÿ8Ù”Ô¹1
+H	java:S106™"+Replace this use of System.out by a logger.( àÁ¿8İ”Ô¹1
+Y	java:S125˜"<This block of commented-out lines of code should be removed.(î¯ÔÉ8ß”Ô¹1
+Y	java:S125›"<This block of commented-out lines of code should be removed.(öÌ¬‚8é”Ô¹1
+H	java:S106¦"+Replace this use of System.out by a logger.(Î÷•†8ê”Ô¹1
+M	java:S106ª"+Replace this use of System.out by a logger.(£´Ìüÿÿÿÿ8ì”Ô¹1
+H	java:S106­"+Replace this use of System.out by a logger.(Áı»©8í”Ô¹1
+H	java:S106·"+Replace this use of System.out by a logger.(Ï€¢è8ô”Ô¹1
+Y	java:S125Ó"<This block of commented-out lines of code should be removed.(’¿¦‹8„”Ô¹1
+[
+java:S1854õ"=Remove this useless assignment to local variable "rightname".(ğáê8ˆ”Ô¹1
+M
+java:S1172ó"/Remove this unused method parameter "username".(“Æéî8‰”Ô¹1
+^	java:S125ß"<This block of commented-out lines of code should be removed.(ºé‹Àÿÿÿÿÿ8š”Ô¹1
+L
+java:S1481õ".Remove this unused "rightname" local variable.(ğáê8›”Ô¹1
+Y	java:S125ö"<This block of commented-out lines of code should be removed.(¹í¢8œ”Ô¹1
+p
+java:S3776ı"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Â¬§8Ÿ”Ô¹1
+X	java:S125—"<This block of commented-out lines of code should be removed.(¡Àø8°”Ô¹1
+M	java:S106™"+Replace this use of System.out by a logger.(ıÉ­Æÿÿÿÿÿ8³”Ô¹1
+H	java:S106"+Replace this use of System.out by a logger.(™°ÍØ8¸”Ô¹1
+H	java:S106¢"+Replace this use of System.out by a logger.(°¸”¹8¹”Ô¹1
+M	java:S106¦"+Replace this use of System.out by a logger.(õ¯ªúÿÿÿÿ8»”Ô¹1
+c
+java:S2147½"ECombine this catch with the one at line 315, which has the same body.(°±âİ8½”Ô¹1
+G	java:S106¬"+Replace this use of System.out by a logger.(÷ù¨58¿”Ô¹1
+H	java:S106Ã"+Replace this use of System.out by a logger.(éƒŸ½8Í”Ô¹1
+M	java:S106Ç"+Replace this use of System.out by a logger.( ´şÿÿÿÿ8Ï”Ô¹1
+M	java:S106Ê"+Replace this use of System.out by a logger.(®¯Ğıÿÿÿÿ8Ğ”Ô¹1
+H	java:S106Ô"+Replace this use of System.out by a logger.(À‘ä8Ô”Ô¹1
+H	java:S106Õ"+Replace this use of System.out by a logger.(Ş…ËÌ8×”Ô¹1
+M	java:S106×"+Replace this use of System.out by a logger.(­®âÛúÿÿÿÿ8Ú”Ô¹1
+<
+java:S2119ñ"Save and re-use this "Random".(¡Å”¦8ê”Ô¹1

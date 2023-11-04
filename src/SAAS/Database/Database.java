@@ -619,6 +619,32 @@ public class Database {
         stat.close();
         con.close();
     }
+    public static void insert_userBasic(String user_ID, String userName, String PSW, String email, String phoneNumber, String lastPSWChange, boolean verbose) throws Exception {
+        // insert the userBasic into the table
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String insertUserBasic = "INSERT INTO UserBasic VALUES (?,?,?,?,?,?);";
+        PreparedStatement stat = con.prepareStatement(insertUserBasic);
+        stat.setString(1, user_ID);
+        stat.setString(2, userName);
+        stat.setString(3, PSW);
+        stat.setString(4, email);
+        stat.setString(5, phoneNumber);
+        stat.setString(6, lastPSWChange);
+        int count = stat.executeUpdate();
+        if (verbose) {
+            if (count == 1) {
+                System.out.println("Insert UserBasic successfully!");
+                // print the userID and userName
+                System.out.println("\tID: " + user_ID);
+                System.out.println("\tName: " + userName);
+            } else {
+                System.out.println("Insert UserBasic failed!");
+            }
+        }
+        stat.close();
+        con.close();
+    }
     // ---------------------------------------------End of The Section------------------------------------------------//
 
 
@@ -753,7 +779,7 @@ public class Database {
             con.close();
             return user;
         } else {
-            throw new Exception("User not found");
+            return null;
         }
     }
     // select platform administrator by ID
@@ -889,6 +915,124 @@ public class Database {
         con.close();
         return tenant;
     }
+    // select tenantAdministrator by ID
+    public static TenantAdministrator select_tenantAdministrator_byID(String tenantAdministratorID) throws Exception {
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String selectTenantAdministrator = "SELECT * FROM TenantAdministrator WHERE userID = '" + tenantAdministratorID + "';";
+        Statement stat = con.createStatement();
+        ResultSet rs = stat.executeQuery(selectTenantAdministrator);
+        TenantAdministrator tenantAdministrator = null;
+        if (rs.next()) {
+            String userID = rs.getString("userID");
+            String name = rs.getString("name");
+            String permissionList = rs.getString("permissionList");
+            String roleList = rs.getString("roleList");
+            String permissionPool = rs.getString("permissionPool");
+            String rolePool = rs.getString("rolePool");
+            String tenantID = rs.getString("tenantID");
+            HashSet<Permission> _permissionList = new HashSet<>();
+            HashSet<Role> _roleList = new HashSet<>();
+            HashSet<Permission> _permissionPool = new HashSet<>();
+            HashSet<Role> _rolePool = new HashSet<>();
+            if (!permissionList.equals("")) {
+                String[] permissions = permissionList.split(";");
+                for (String permission : permissions) {
+                    _permissionList.add(GlobalPermission.getPermissionByID(permission));
+                }
+            }
+            if (!roleList.equals("")) {
+                String[] roles = roleList.split(";");
+                for (String role : roles) {
+                    _roleList.add(GlobalRole.getRoleByID(role));
+                }
+            }
+            if (!permissionPool.equals("")) {
+                String[] permissions = permissionPool.split(";");
+                for (String permission : permissions) {
+                    _permissionPool.add(GlobalPermission.getPermissionByID(permission));
+                }
+            }
+            if (!rolePool.equals("")) {
+                String[] roles = rolePool.split(";");
+                for (String role : roles) {
+                    _rolePool.add(GlobalRole.getRoleByID(role));
+                }
+            }
+            tenantAdministrator = new TenantAdministrator(name, userID, _permissionList, _roleList, _permissionPool, _rolePool, tenantID);
+        }
+        rs.close();
+        stat.close();
+        con.close();
+        return tenantAdministrator;
+    }
+    // select tenantUser by ID
+    public static TenantUser select_tenantUser_byID(String tenantUserID) throws Exception {
+        Class.forName(JDBC_DRIVER);
+        Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
+        String selectTenantUser = "SELECT * FROM TenantUser WHERE userID = '" + tenantUserID + "';";
+        Statement stat = con.createStatement();
+        ResultSet rs = stat.executeQuery(selectTenantUser);
+        TenantUser tenantUser = null;
+        if (rs.next()) {
+            String userID = rs.getString("userID");
+            String name = rs.getString("name");
+            String permissionList = rs.getString("permissionList");
+            String roleList = rs.getString("roleList");
+            String permissionPool = rs.getString("permissionPool");
+            String rolePool = rs.getString("rolePool");
+            String tenantID = rs.getString("tenantID");
+            HashSet<Permission> _permissionList = new HashSet<>();
+            HashSet<Role> _roleList = new HashSet<>();
+            HashSet<Permission> _permissionPool = new HashSet<>();
+            HashSet<Role> _rolePool = new HashSet<>();
+            if (!permissionList.equals("")) {
+                String[] permissions = permissionList.split(";");
+                for (String permission : permissions) {
+                    _permissionList.add(GlobalPermission.getPermissionByID(permission));
+                }
+            }
+            if (!roleList.equals("")) {
+                String[] roles = roleList.split(";");
+                for (String role : roles) {
+                    _roleList.add(GlobalRole.getRoleByID(role));
+                }
+            }
+            if (!permissionPool.equals("")) {
+                String[] permissions = permissionPool.split(";");
+                for (String permission : permissions) {
+                    _permissionPool.add(GlobalPermission.getPermissionByID(permission));
+                }
+            }
+            if (!rolePool.equals("")) {
+                String[] roles = rolePool.split(";");
+                for (String role : roles) {
+                    _rolePool.add(GlobalRole.getRoleByID(role));
+                }
+            }
+            tenantUser = new TenantUser(name, userID, _permissionList, _roleList, _permissionPool, _rolePool, tenantID);
+        }
+        rs.close();
+        stat.close();
+        con.close();
+        return tenantUser;
+    }
+    // select user by ID
+    public static User select_user_byID(String userID) throws Exception {
+        // go through all user tables (PlatformAdminisatrator, TenantAdministrator, TenantUser and Tenant) to find the user
+        User user = null;
+        user = select_platformAdministrator_byID(userID);
+        if (user == null) {
+            user = select_tenantAdministrator_byID(userID);
+        }
+        if (user == null) {
+            user = select_tenantUser_byID(userID);
+        }
+        if (user == null) {
+            user = select_tenant_byID(userID);
+        }
+        return user;
+    }
     // ---------------------------------------------End of The Section------------------------------------------------//
 
 
@@ -926,6 +1070,9 @@ public class Database {
         stat.executeUpdate(updateTenant);
         stat.close();
         con.close();
+    }
+    public static void update_userBasic_PSW(String userID, String new_PSW, String lastPSWChange) throws Exception {
+
     }
     // ---------------------------------------------End of The Section------------------------------------------------//
 
