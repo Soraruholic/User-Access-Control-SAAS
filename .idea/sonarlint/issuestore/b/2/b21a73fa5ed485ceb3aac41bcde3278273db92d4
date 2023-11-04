@@ -1,0 +1,61 @@
+
+w
+java:S1104"ZMake ROLE_ADD_CHECK a static final constant or non-public and provide accessors if needed.(‚®ÜÁ8˜¬óÉ¹1
+z
+java:S1104"]Make ROLE_DELETE_CHECK a static final constant or non-public and provide accessors if needed.(ô›’†8™¬óÉ¹1
+
+java:S1104"]Make ROLE_ASSIGN_CHECK a static final constant or non-public and provide accessors if needed.(¦«¨²øÿÿÿÿ8™¬óÉ¹1
+
+java:S1104"nMake ROLE_ASSIGN2PLATFORM_ADMINISTRATOR a static final constant or non-public and provide accessors if needed.(âàë”úÿÿÿÿ8™¬óÉ¹1
+{
+java:S1104"^Make ROLE_ASSIGN2TENANT a static final constant or non-public and provide accessors if needed.(²™Õ8™¬óÉ¹1
+
+java:S1104	"lMake ROLE_ASSIGN2TENANT_ADMINISTRATOR a static final constant or non-public and provide accessors if needed.(³Âã«úÿÿÿÿ8š¬óÉ¹1
+…
+java:S1104
+"cMake ROLE_ASSIGN2TENANT_USER a static final constant or non-public and provide accessors if needed.(³ÉÆºıÿÿÿÿ8š¬óÉ¹1
+€
+java:S1104"^Make ROLE_DEPRIVE_CHECK a static final constant or non-public and provide accessors if needed.(¾“‹ùúÿÿÿÿ8š¬óÉ¹1
+
+java:S1104"dMake ROLE_DEPRIVE_FROM_TENANT a static final constant or non-public and provide accessors if needed.(¯¶çç8š¬óÉ¹1
+Q
+java:S1444"4Make this "public static ROLE_ADD_CHECK" field final(‚®ÜÁ8š¬óÉ¹1
+T
+java:S1444"7Make this "public static ROLE_DELETE_CHECK" field final(ô›’†8š¬óÉ¹1
+Y
+java:S1444"7Make this "public static ROLE_ASSIGN_CHECK" field final(¦«¨²øÿÿÿÿ8š¬óÉ¹1
+j
+java:S1444"HMake this "public static ROLE_ASSIGN2PLATFORM_ADMINISTRATOR" field final(âàë”úÿÿÿÿ8›¬óÉ¹1
+U
+java:S1444"8Make this "public static ROLE_ASSIGN2TENANT" field final(²™Õ8›¬óÉ¹1
+h
+java:S1444	"FMake this "public static ROLE_ASSIGN2TENANT_ADMINISTRATOR" field final(³Âã«úÿÿÿÿ8›¬óÉ¹1
+_
+java:S1444
+"=Make this "public static ROLE_ASSIGN2TENANT_USER" field final(³ÉÆºıÿÿÿÿ8›¬óÉ¹1
+Z
+java:S1444"8Make this "public static ROLE_DEPRIVE_CHECK" field final(¾“‹ùúÿÿÿÿ8›¬óÉ¹1
+[
+java:S1444">Make this "public static ROLE_DEPRIVE_FROM_TENANT" field final(¯¶çç8›¬óÉ¹1
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ã·Ëéùÿÿÿÿ
+v
+java:S3008"YRename this field "ROLE_ADD_CHECK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚®ÜÁ8¬óÉ¹1
+y
+java:S3008"\Rename this field "ROLE_DELETE_CHECK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô›’†8¬óÉ¹1
+~
+java:S3008"\Rename this field "ROLE_ASSIGN_CHECK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦«¨²øÿÿÿÿ8¬óÉ¹1
+
+java:S3008"mRename this field "ROLE_ASSIGN2PLATFORM_ADMINISTRATOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âàë”úÿÿÿÿ8¬óÉ¹1
+z
+java:S3008"]Rename this field "ROLE_ASSIGN2TENANT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²™Õ8¬óÉ¹1
+
+java:S3008	"kRename this field "ROLE_ASSIGN2TENANT_ADMINISTRATOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³Âã«úÿÿÿÿ8¬óÉ¹1
+„
+java:S3008
+"bRename this field "ROLE_ASSIGN2TENANT_USER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ÉÆºıÿÿÿÿ8¬óÉ¹1
+
+java:S3008"]Rename this field "ROLE_DEPRIVE_CHECK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾“‹ùúÿÿÿÿ8¬óÉ¹1
+€
+java:S3008"cRename this field "ROLE_DEPRIVE_FROM_TENANT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯¶çç8¬óÉ¹1
+U
+java:S1118":Add a private constructor to hide the implicit public one.(ù­¤£úÿÿÿÿ

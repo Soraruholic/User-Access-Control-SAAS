@@ -1,0 +1,37 @@
+
+u
+java:S1192'"ZDefine a constant instead of duplicating this literal "Permission does not exist" 3 times.(ÁõÅÈúÿÿÿÿ
+s
+java:S1192‡"WDefine a constant instead of duplicating this literal "Service does not exist" 3 times.(â¨Ïéùÿÿÿÿ
+o
+java:S1192W"TDefine a constant instead of duplicating this literal "Role does not exist" 3 times.(úçîÖúÿÿÿÿ
+†
+java:S1319"kThe type of "permissionPool" should be an interface such as "Set" rather than the implementation "HashSet".(ñƒš˜ùÿÿÿÿ
+€
+java:S1319"eThe type of "rolePool" should be an interface such as "Set" rather than the implementation "HashSet".(ñƒš˜ùÿÿÿÿ
+ƒ
+java:S1319"hThe type of "servicePool" should be an interface such as "Set" rather than the implementation "HashSet".(ñƒš˜ùÿÿÿÿ
+†
+java:S1319"kThe type of "permissionList" should be an interface such as "Set" rather than the implementation "HashSet".(ñƒš˜ùÿÿÿÿ
+€
+java:S1319"eThe type of "roleList" should be an interface such as "Set" rather than the implementation "HashSet".(ñƒš˜ùÿÿÿÿ
+ƒ
+java:S1319"mThe return type of this method should be an interface such as "Set" rather than the implementation "HashSet".(µàÔç
+m	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²
+@	java:S106²"+Replace this use of System.out by a logger.(Şëš5
+F	java:S106´"+Replace this use of System.out by a logger.(Ô«¼úÿÿÿÿ
+@	java:S106¶"+Replace this use of System.out by a logger.(²†
+F	java:S106¸"+Replace this use of System.out by a logger.(Ô«¼úÿÿÿÿ
+F	java:S106¼"+Replace this use of System.out by a logger.(ñ˜‡¦ÿÿÿÿÿ
+F	java:S106¾"+Replace this use of System.out by a logger.(óô£›ùÿÿÿÿ
+A	java:S106À"+Replace this use of System.out by a logger.(ï¬Ù¢
+F	java:S106Â"+Replace this use of System.out by a logger.(óô£›ùÿÿÿÿ
+F	java:S106Æ"+Replace this use of System.out by a logger.(ª©ãğøÿÿÿÿ
+A	java:S106È"+Replace this use of System.out by a logger.(’„ã»
+I
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
+F
+java:S1128
+"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ

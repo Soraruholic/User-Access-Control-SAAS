@@ -9,8 +9,11 @@ import SAAS.UAC.UPR.User;
 import java.util.HashSet;
 import java.util.List;
 public class TenantAdministrator extends Tenant {
-    public TenantAdministrator(String name, String userID, HashSet<Permission> permissionList, HashSet<Role> roleList, HashSet<Permission> permissionPool, HashSet<Role> rolePool) {
+    protected String tenantID;
+    public TenantAdministrator(String name, String userID, HashSet<Permission> permissionList, HashSet<Role> roleList,
+                               HashSet<Permission> permissionPool, HashSet<Role> rolePool, String tenantID) {
         super(name, userID, null, null, null, permissionList, roleList, permissionPool, rolePool);
+        this.tenantID = tenantID;
     }
 
     // Operations for Permission

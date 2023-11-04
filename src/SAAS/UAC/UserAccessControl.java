@@ -10,6 +10,26 @@ import java.util.HashSet;
 import java.util.List;
 
 public class UserAccessControl {
+    protected static User current_user;
+    public static void init(String userID) throws Exception {
+        // check whether userID is null, throw an exception if it is null
+        if (userID == null){
+            throw new IllegalArgumentException("userID is null");
+        }
+
+        // check whether the user exists, throw an exception if it does not exist
+        if (Database.select_userBasic(userID) == null){
+            throw new IllegalArgumentException("User does not exist");
+        }
+        
+        // initialize the user
+        current_user = Database.select_user_byID(userID);
+
+        // check whether the user is null, throw an exception if it is null
+        if (current_user == null){
+            throw new IllegalArgumentException("User does not exist");
+        }
+    }
     public static boolean check_permission(User user, String functionID) throws Exception {
         // check whether functionID is null, throw an exception if it is null
         if (functionID == null){
@@ -393,7 +413,6 @@ public class UserAccessControl {
         if (permission_IDs.size() == 0){
             throw new IllegalArgumentException("The permission_IDs is empty");
         }
-
 
     }
 

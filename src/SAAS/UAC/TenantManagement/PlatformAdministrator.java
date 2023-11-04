@@ -15,7 +15,8 @@ import java.util.ArrayList;
 //PlatformAdministrator inherits from User
 public class PlatformAdministrator extends User{
     protected HashSet<Service> servicePool;
-    public PlatformAdministrator(String name, String userID, HashSet<Permission> permissionPool, HashSet<Role> rolePool, HashSet<Service> servicePool, HashSet<Permission> permissionList, HashSet<Role> roleList) {
+    public PlatformAdministrator(String name, String userID, HashSet<Permission> permissionPool, HashSet<Role> rolePool,
+                                 HashSet<Service> servicePool, HashSet<Permission> permissionList, HashSet<Role> roleList) {
         super(name, userID, permissionList, roleList, permissionPool, rolePool);
         this.servicePool = servicePool;
     }

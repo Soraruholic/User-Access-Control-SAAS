@@ -1,0 +1,103 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(çÏÜÑøÿÿÿÿ8çÓùÓ¹1
+j
+java:S1192q"HDefine a constant instead of duplicating this literal "ROLE02" 11 times.(™Ëİëúÿÿÿÿ8ïÓùÓ¹1
+d
+java:S1192H"GDefine a constant instead of duplicating this literal "role01" 4 times.(ßî®8ïÓùÓ¹1
+l
+java:S1192B"JDefine a constant instead of duplicating this literal "FUNC_PER7" 3 times.(òË„‰ÿÿÿÿÿ8ğÓùÓ¹1
+g
+java:S1192C"JDefine a constant instead of duplicating this literal "FUNC_PER8" 3 times.(¶¨¦Ğ8ñÓùÓ¹1
+m
+java:S1192""PDefine a constant instead of duplicating this literal "PLATFORM_ADMIN0" 7 times.(¼²ë 8ñÓùÓ¹1
+l
+java:S1192A"JDefine a constant instead of duplicating this literal "FUNC_PER2" 3 times.(«²œ³øÿÿÿÿ8ñÓùÓ¹1
+l
+java:S1192B"JDefine a constant instead of duplicating this literal "FUNC_PER4" 3 times.(òË„‰ÿÿÿÿÿ8ñÓùÓ¹1
+d
+java:S1192}"GDefine a constant instead of duplicating this literal "role02" 3 times.(¶°•²8ñÓùÓ¹1
+l
+java:S1192A"JDefine a constant instead of duplicating this literal "FUNC_PER1" 3 times.(«²œ³øÿÿÿÿ8òÓùÓ¹1
+l
+java:S1192A"JDefine a constant instead of duplicating this literal "FUNC_PER0" 3 times.(«²œ³øÿÿÿÿ8òÓùÓ¹1
+v
+java:S1192g"TDefine a constant instead of duplicating this literal "The role_ID is null" 4 times.(ÜÛÆ†ıÿÿÿÿ8òÓùÓ¹1
+c
+java:S1192P"FDefine a constant instead of duplicating this literal "ROLE1" 3 times.(…æÌ8òÓùÓ¹1
+k
+java:S1192°"HDefine a constant instead of duplicating this literal "ROLE20" 11 times.(¶µ„üÿÿÿÿ8òÓùÓ¹1
+k
+java:S1192°"HDefine a constant instead of duplicating this literal "role20" 13 times.(¶µ„üÿÿÿÿ8óÓùÓ¹1
+t
+java:S1192‹"QDefine a constant instead of duplicating this literal "The role is null" 4 times.(ù¤½¬ùÿÿÿÿ8óÓùÓ¹1
+f
+java:S1192ç"HDefine a constant instead of duplicating this literal "TENANT0" 4 times.(Æ¤ÒÇ8óÓùÓ¹1
+m	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼²ë 8õÓùÓ¹1
+m	java:S117@"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼²ë 8õÓùÓ¹1
+s	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½ğùÿÿÿÿ8öÓùÓ¹1
+n	java:S117¡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼²ë 8öÓùÓ¹1
+s	java:S117Ú"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±Ëùûÿÿÿÿ8öÓùÓ¹1
+n	java:S117æ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼²ë 8÷ÓùÓ¹1
+n	java:S117ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ¤ÒÇ8÷ÓùÓ¹1
+s	java:S117è"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥Ø©Ôùÿÿÿÿ8÷ÓùÓ¹1
+s	java:S117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁœÕÌûÿÿÿÿ8÷ÓùÓ¹1
+n	java:S117á"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼²ë 8øÓùÓ¹1
+n	java:S117â"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ¤ÒÇ8øÓùÓ¹1
+n	java:S117ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·öÒ™8øÓùÓ¹1
+s	java:S117€"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁœÕÌûÿÿÿÿ8øÓùÓ¹1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(®³ƒ»8‚ÔùÓ¹1
+X	java:S125"<This block of commented-out lines of code should be removed.(ÏÔûñ8äÔùÓ¹1
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½šïá8éÔùÓ¹1
+X	java:S125%"<This block of commented-out lines of code should be removed.(ø»8îÔùÓ¹1
+j	java:S1006"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ›Œ 8÷ÔùÓ¹1
+X
+java:S2696G"6Make the enclosing method "static" or remove this set.(¸“œ—ÿÿÿÿÿ8şÔùÓ¹1
+S
+java:S2696L"6Make the enclosing method "static" or remove this set.(•àÁ·8€ÕùÓ¹1
+I
+java:S1602O",Remove useless curly braces around statement(¶¤†Ä8ÕùÓ¹1
+I
+java:S1602U",Remove useless curly braces around statement(¶¤†Ä8„ÕùÓ¹1
+I
+java:S1602[",Remove useless curly braces around statement(¶¤†Ä8‡ÕùÓ¹1
+I
+java:S1602d",Remove useless curly braces around statement(¶¤†Ä8‰ÕùÓ¹1
+I
+java:S1602j",Remove useless curly braces around statement(¶¤†Ä8ŒÕùÓ¹1
+I
+java:S1602p",Remove useless curly braces around statement(¶¤†Ä8ÕùÓ¹1
+I
+java:S1602v",Remove useless curly braces around statement(¶¤†Ä8ÕùÓ¹1
+I
+java:S1602|",Remove useless curly braces around statement(¶¤†Ä8’ÕùÓ¹1
+J
+java:S1602‚",Remove useless curly braces around statement(¶¤†Ä8–ÕùÓ¹1
+J
+java:S1602ˆ",Remove useless curly braces around statement(¶¤†Ä8šÕùÓ¹1
+p	java:S100˜"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓşÈéüÿÿÿÿ8 ÕùÓ¹1
+Y
+java:S2696§"6Make the enclosing method "static" or remove this set.(İ¥Âàıÿÿÿÿ8¥ÕùÓ¹1
+T
+java:S2696¬"6Make the enclosing method "static" or remove this set.(åë¥¶8¨ÕùÓ¹1
+J
+java:S1602Ó",Remove useless curly braces around statement(¶¤†Ä8¸ÕùÓ¹1
+p	java:S100ä"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–å¦¥ùÿÿÿÿ8¾ÕùÓ¹1
+Y
+java:S2696õ"6Make the enclosing method "static" or remove this set.(íúüÿÿÿÿ8ÄÕùÓ¹1
+T
+java:S2696ú"6Make the enclosing method "static" or remove this set.(©¸øŠ8ÆÕùÓ¹1
+T
+java:S2696ı"6Make the enclosing method "static" or remove this set.(¢ö¿å8ÇÕùÓ¹1
+Y
+java:S2696‚"6Make the enclosing method "static" or remove this set.(¤·ŞÏøÿÿÿÿ8ÉÕùÓ¹1
+J
+java:S1602",Remove useless curly braces around statement(¶¤†Ä8ÓÕùÓ¹1
+J
+java:S1602Î",Remove useless curly braces around statement(¶¤†Ä8âÕùÓ¹1
+p	java:S100ß"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„¸âµûÿÿÿÿ8åÕùÓ¹1
+J
+java:S1602“",Remove useless curly braces around statement(¶¤†Ä8ñÕùÓ¹1
+J
+java:S1602Ã",Remove useless curly braces around statement(¶¤†Ä8şÕùÓ¹1
+M
+java:S5960-"+Remove this assertion from production code.(½¦Â”úÿÿÿÿ8ÖùÓ¹1

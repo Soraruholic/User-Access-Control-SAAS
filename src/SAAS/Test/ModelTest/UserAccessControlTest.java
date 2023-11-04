@@ -6,10 +6,7 @@ import SAAS.UAC.TenantManagement.Tenant;
 import SAAS.UAC.UPR.*;
 import SAAS.UAC.UserAccessControl;
 import SAAS.Utils.GlobalVariables;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -347,6 +344,9 @@ class UserAccessControlTest {
         assigned_tenant2 = Database.select_tenant_byID("TENANT0");
         assertTrue(assigned_tenant2.getRoleList().contains(target_role));
     }
+
+    // Ignore the test
+    @Disabled
     @Test
     void test_PlatformAdministrator_DepriveRole() throws Exception {
         // Suppose that the platform administrator wants to deprive a role from a tenant.

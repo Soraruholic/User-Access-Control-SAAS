@@ -1,0 +1,13 @@
+
+u
+java:S1192"ZDefine a constant instead of duplicating this literal "Permission does not exist" 3 times.(ÁõÅÈúÿÿÿÿ
+o
+java:S1192M"TDefine a constant instead of duplicating this literal "Role does not exist" 3 times.(úçîÖúÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(´Ï©“ÿÿÿÿÿ
+G
+java:S1128"1Remove this unused import 'SAAS.UAC.UPR.Service'.(¶ú¶
+D
+java:S1128".Remove this unused import 'SAAS.UAC.UPR.User'.(Ÿ’¶…
+F
+java:S1128
+"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
