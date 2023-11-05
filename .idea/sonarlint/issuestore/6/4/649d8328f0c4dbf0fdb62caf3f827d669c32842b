@@ -1,0 +1,28 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(®³ƒ»
+d
+java:S2094"BRemove this empty class, write its code or make it an "interface".(‚ÉŞ°úÿÿÿÿ8•¶Ô¹1
+O
+java:S1128"3Remove this unused import 'SAAS.Database.Database'.(çëùf8ğÔ¹1
+i
+java:S1128"LRemove this unused import 'SAAS.UAC.TenantManagement.PlatformAdministrator'.(é¦©á8ğÔ¹1
+_
+java:S1128"=Remove this unused import 'SAAS.UAC.TenantManagement.Tenant'.(­ê·’úÿÿÿÿ8ğÔ¹1
+K
+java:S1128")Remove this unused import 'SAAS.UAC.UPR'.(óÂÊÿÿÿÿÿ8ğÔ¹1
+Y
+java:S1128"7Remove this unused import 'SAAS.UAC.UserAccessControl'.(¹©¢ùÿÿÿÿ8ğÔ¹1
+T
+java:S1128"7Remove this unused import 'SAAS.Utils.GlobalVariables'.(¤æşô8ğÔ¹1
+O
+java:S1128	"2Remove this unused import 'org.junit.jupiter.api'.(×Àïˆ8ğÔ¹1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ğÔ¹1
+J
+java:S1128".Remove this unused import 'java.util.HashSet'.(Ê‚êX8ğÔ¹1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ğÔ¹1
+K
+java:S1128".Remove this unused import 'java.util.Objects'.(¼¸õ›8ğÔ¹1
+_
+java:S1128"=Remove this unused import 'org.junit.jupiter.api.Assertions'.(âè¨ùÿÿÿÿ8ğÔ¹1

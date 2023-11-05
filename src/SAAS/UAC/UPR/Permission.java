@@ -6,7 +6,14 @@ public abstract class Permission {
         this.permissionID = permissionID;
         this.permissionName = permissionName;
     }
-
+//     @Override
+//     public boolean equals(Object obj) {
+//        if (obj instanceof Permission) {
+//                 Permission permission = (Permission) obj;
+//                return permissionID.equalsIgnoreCase(permission.getPermissionID().trim());
+//             }
+//        return false;
+//    }
     public String getPermissionID() {
         return permissionID;
     }

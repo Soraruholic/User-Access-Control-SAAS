@@ -1,0 +1,380 @@
+
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(žÛßŒ8‹‡¶Ô¹1
+g	java:S1124"FDefine and throw a dedicated exception instead of using a generic one.(ˆ²Æíûÿÿÿÿ8‡¶Ô¹1
+g	java:S112J"FDefine and throw a dedicated exception instead of using a generic one.(¡Õ˜»ýÿÿÿÿ8Ž‡¶Ô¹1
+g	java:S112b"FDefine and throw a dedicated exception instead of using a generic one.(‰ß½Ÿûÿÿÿÿ8‡¶Ô¹1
+b	java:S112y"FDefine and throw a dedicated exception instead of using a generic one.(ëÄêÁ8‘‡¶Ô¹1
+c	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(‘¹†—8’‡¶Ô¹1
+h	java:S112£"FDefine and throw a dedicated exception instead of using a generic one.(“ò²Úøÿÿÿÿ8”‡¶Ô¹1
+h	java:S112¶"FDefine and throw a dedicated exception instead of using a generic one.(®ÐÐÚüÿÿÿÿ8–‡¶Ô¹1
+h	java:S112È"FDefine and throw a dedicated exception instead of using a generic one.(Áõÿµúÿÿÿÿ8—‡¶Ô¹1
+c	java:S112Ü"FDefine and throw a dedicated exception instead of using a generic one.(ÔâŠ÷8™‡¶Ô¹1
+h	java:S112õ"FDefine and throw a dedicated exception instead of using a generic one.(ÛÎ‡®ûÿÿÿÿ8›‡¶Ô¹1
+h	java:S112«"FDefine and throw a dedicated exception instead of using a generic one.(ÊŽüÔùÿÿÿÿ8‡¶Ô¹1
+c	java:S112É"FDefine and throw a dedicated exception instead of using a generic one.(ó÷å8ž‡¶Ô¹1
+h	java:S112ç"FDefine and throw a dedicated exception instead of using a generic one.(½²ðèûÿÿÿÿ8ž‡¶Ô¹1
+c	java:S112„"FDefine and throw a dedicated exception instead of using a generic one.(öÚ—Ð8Ÿ‡¶Ô¹1
+h	java:S112­"FDefine and throw a dedicated exception instead of using a generic one.(žåæ™øÿÿÿÿ8 ‡¶Ô¹1
+h	java:S112ý"FDefine and throw a dedicated exception instead of using a generic one.(óÛ§Øüÿÿÿÿ8 ‡¶Ô¹1
+c	java:S112¶"FDefine and throw a dedicated exception instead of using a generic one.(Æ‚å“8 ‡¶Ô¹1
+b	java:S112ô"FDefine and throw a dedicated exception instead of using a generic one.(öÆà8¡‡¶Ô¹1
+c	java:S112â"FDefine and throw a dedicated exception instead of using a generic one.(ßÄ¢—8¡‡¶Ô¹1
+h	java:S112€"FDefine and throw a dedicated exception instead of using a generic one.(‡¦¨¸úÿÿÿÿ8£‡¶Ô¹1
+h	java:S112‘"FDefine and throw a dedicated exception instead of using a generic one.(ñÅÕýúÿÿÿÿ8¤‡¶Ô¹1
+c	java:S112¦"FDefine and throw a dedicated exception instead of using a generic one.(÷ÎÆï8¦‡¶Ô¹1
+~
+java:S1192:"\Define a constant instead of duplicating this literal "name VARCHAR(255) NOT NULL," 5 times.(úÍôúøÿÿÿÿ8±‡¶Ô¹1
+r
+java:S1192@"UDefine a constant instead of duplicating this literal "PRIMARY KEY (userID)" 5 times.(ªû‚ð8±‡¶Ô¹1
+{
+java:S11929"^Define a constant instead of duplicating this literal "userID VARCHAR(255) NOT NULL," 5 times.(¤Ÿ…8±‡¶Ô¹1
+g
+java:S1192Ç"IDefine a constant instead of duplicating this literal "roleList" 3 times.(‹·Í8±‡¶Ô¹1
+r
+java:S1192¬"ODefine a constant instead of duplicating this literal "permissionList" 4 times.(¶÷šÐúÿÿÿÿ8±‡¶Ô¹1
+g
+java:S1192¢"IDefine a constant instead of duplicating this literal "\tName: " 8 times.(ÌÆ»ã8±‡¶Ô¹1
+‚
+java:S1192>"`Define a constant instead of duplicating this literal "rolePool VARCHAR(255) NOT NULL," 4 times.(‹Ïþ¡ûÿÿÿÿ8±‡¶Ô¹1
+j
+java:S1192¡"GDefine a constant instead of duplicating this literal "\tID: " 8 times.(ü£™Îýÿÿÿÿ8±‡¶Ô¹1
+ƒ
+java:S1192;"fDefine a constant instead of duplicating this literal "permissionList VARCHAR(255) NOT NULL," 6 times.(–¿²»8²‡¶Ô¹1
+g
+java:S1192Þ"IDefine a constant instead of duplicating this literal "DATA_PER" 5 times.(ÅÇ¾Ö8²‡¶Ô¹1
+‚
+java:S1192<"`Define a constant instead of duplicating this literal "roleList VARCHAR(255) NOT NULL," 5 times.(®æˆúúÿÿÿÿ8²‡¶Ô¹1
+ƒ
+java:S1192="fDefine a constant instead of duplicating this literal "permissionPool VARCHAR(255) NOT NULL," 4 times.(à×Áæ8²‡¶Ô¹1
+l
+java:S1192Ð"IDefine a constant instead of duplicating this literal "FUNC_PER" 5 times.(¿œŠ¹üÿÿÿÿ8²‡¶Ô¹1
+s	java:S117‚"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œñ­ùýÿÿÿÿ8º‡¶Ô¹1
+n	java:S117„"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìóŸã8º‡¶Ô¹1
+n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä¼¹ñ8º‡¶Ô¹1
+n	java:S117­"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„¯î©8º‡¶Ô¹1
+n	java:S117Ë"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î“ƒº8º‡¶Ô¹1
+n	java:S117Ì"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇÓ÷·8º‡¶Ô¹1
+s	java:S117Î"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åù¹úÿÿÿÿ8»‡¶Ô¹1
+s	java:S117Ô"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´¿îïùÿÿÿÿ8»‡¶Ô¹1
+n	java:S117‡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„¯î©8»‡¶Ô¹1
+n	java:S117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â™øÁ8»‡¶Ô¹1
+s	java:S117‰"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ‘Úƒùÿÿÿÿ8»‡¶Ô¹1
+s	java:S117Š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿Ñá›ýÿÿÿÿ8»‡¶Ô¹1
+n	java:S117‹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ùö¿8»‡¶Ô¹1
+n	java:S117Ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„¯î©8»‡¶Ô¹1
+n	java:S117Ä"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â™øÁ8»‡¶Ô¹1
+s	java:S117Å"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Ô¬Àùÿÿÿÿ8»‡¶Ô¹1
+s	java:S117Æ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ‘Úƒùÿÿÿÿ8¼‡¶Ô¹1
+s	java:S117Ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿Ñá›ýÿÿÿÿ8¼‡¶Ô¹1
+s	java:S117È"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•à¥¸ùÿÿÿÿ8¼‡¶Ô¹1
+s	java:S117É"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿá§´úÿÿÿÿ8¼‡¶Ô¹1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(×ÿ¸×8Ð‡¶Ô¹1
+e
+java:S2095Œ"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8ëç¶Ô¹1
+d
+java:S2095B"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8ëç¶Ô¹1
+r
+java:S2095”"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(’ÿþêüÿÿÿÿ8ëç¶Ô¹1
+r
+java:S2095Ÿ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(›†²œüÿÿÿÿ8ëç¶Ô¹1
+k
+java:S2095›"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ëç¶Ô¹1
+r
+java:S2095Ó"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(õÕ¾Ñúÿÿÿÿ8ëç¶Ô¹1
+d
+java:S2095Z"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8ëç¶Ô¹1
+k
+java:S2095’"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ëç¶Ô¹1
+k
+java:S2095Š"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ìç¶Ô¹1
+k
+java:S2095³"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ìç¶Ô¹1
+k
+java:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ìç¶Ô¹1
+k
+java:S2095–"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ìç¶Ô¹1
+d
+java:S2095q"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8ìç¶Ô¹1
+e
+java:S2095é"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8ìç¶Ô¹1
+e
+java:S2095æ"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8ìç¶Ô¹1
+k
+java:S2095’"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ìç¶Ô¹1
+r
+java:S2095ä"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(æ§«ùúÿÿÿÿ8ìç¶Ô¹1
+e
+java:S2095¦"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8ìç¶Ô¹1
+k
+java:S2095ú"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ìç¶Ô¹1
+k
+java:S2095Ö"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ìç¶Ô¹1
+j
+java:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ìç¶Ô¹1
+k
+java:S2095¿"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ìç¶Ô¹1
+k
+java:S2095Ñ"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ìç¶Ô¹1
+j
+java:S2095L"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ìç¶Ô¹1
+k
+java:S2095ï"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8ìç¶Ô¹1
+e
+java:S2095Á"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8ìç¶Ô¹1
+e
+java:S2095ˆ"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8ìç¶Ô¹1
+m
+java:S2095˜"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Òë û8ìç¶Ô¹1
+d
+java:S2095$"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8íç¶Ô¹1
+e
+java:S2095À"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8íç¶Ô¹1
+k
+java:S2095Ê"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8íç¶Ô¹1
+k
+java:S2095Þ"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8íç¶Ô¹1
+e
+java:S2095ª"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8íç¶Ô¹1
+r
+java:S2095µ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(õÕ¾Ñúÿÿÿÿ8íç¶Ô¹1
+k
+java:S2095ä"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8íç¶Ô¹1
+k
+java:S2095¸"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8îç¶Ô¹1
+j
+java:S20956"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8îç¶Ô¹1
+e
+java:S2095›"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8îç¶Ô¹1
+e
+java:S2095¶"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8îç¶Ô¹1
+r
+java:S2095ñ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(êéæ üÿÿÿÿ8îç¶Ô¹1
+r
+java:S2095Ø"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(þÿÞ¹ûÿÿÿÿ8îç¶Ô¹1
+k
+java:S2095´"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8îç¶Ô¹1
+j
+java:S2095{"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8îç¶Ô¹1
+e
+java:S2095Ô"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8îç¶Ô¹1
+e
+java:S2095ù"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8îç¶Ô¹1
+k
+java:S2095¤"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8îç¶Ô¹1
+j
+java:S2095d"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8îç¶Ô¹1
+e
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8îç¶Ô¹1
+k
+java:S2095¥"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8îç¶Ô¹1
+k
+java:S2095ö"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8îç¶Ô¹1
+k
+java:S2095â"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8îç¶Ô¹1
+e
+java:S2095®"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8îç¶Ô¹1
+k
+java:S2095¨"HUse try-with-resources or close this "Connection" in a "finally" clause.(Å’¼Þûÿÿÿÿ8îç¶Ô¹1
+e
+java:S2095ü"GUse try-with-resources or close this "Statement" in a "finally" clause.(è¢®›8îç¶Ô¹1
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(žÛßŒ8Žè¶Ô¹1
+X
+java:S6437"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8‘è¶Ô¹1
+L	java:S106/"+Replace this use of System.out by a logger.( Äí®ûÿÿÿÿ8•è¶Ô¹1
+o	java:S1004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ²Æíûÿÿÿÿ8•è¶Ô¹1
+X
+java:S64376"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8—è¶Ô¹1
+]	java:S1257"<This block of commented-out lines of code should be removed.(°ˆ™åþÿÿÿÿ8—è¶Ô¹1
+G	java:S106E"+Replace this use of System.out by a logger.(ñÂ’Ÿ8™è¶Ô¹1
+o	java:S100J"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡Õ˜»ýÿÿÿÿ8™è¶Ô¹1
+X
+java:S6437L"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8›è¶Ô¹1
+]	java:S125M"<This block of commented-out lines of code should be removed.(°ˆ™åþÿÿÿÿ8›è¶Ô¹1
+L	java:S106]"+Replace this use of System.out by a logger.(Æ•Éýÿÿÿÿ8è¶Ô¹1
+o	java:S100b"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ß½Ÿûÿÿÿÿ8žè¶Ô¹1
+X
+java:S6437d"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8 è¶Ô¹1
+]	java:S125e"<This block of commented-out lines of code should be removed.(°ˆ™åþÿÿÿÿ8¡è¶Ô¹1
+L	java:S106t"+Replace this use of System.out by a logger.(Ë§äèÿÿÿÿÿ8£è¶Ô¹1
+j	java:S100y"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÄêÁ8¤è¶Ô¹1
+X
+java:S6437{"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8¦è¶Ô¹1
+]	java:S125|"<This block of commented-out lines of code should be removed.(°ˆ™åþÿÿÿÿ8§è¶Ô¹1
+H	java:S106‹"+Replace this use of System.out by a logger.(¬¼¥8©è¶Ô¹1
+k	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¹†—8ªè¶Ô¹1
+Y
+java:S6437’"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8¬è¶Ô¹1
+^	java:S125“"<This block of commented-out lines of code should be removed.(°ˆ™åþÿÿÿÿ8¬è¶Ô¹1
+H	java:S106ž"+Replace this use of System.out by a logger.(àäÅ‘8®è¶Ô¹1
+p	java:S100£"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“ò²Úøÿÿÿÿ8¯è¶Ô¹1
+Y
+java:S6437¥"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8±è¶Ô¹1
+^	java:S125¦"<This block of commented-out lines of code should be removed.(°ˆ™åþÿÿÿÿ8²è¶Ô¹1
+M	java:S106±"+Replace this use of System.out by a logger.(º¾åßüÿÿÿÿ8³è¶Ô¹1
+p	java:S100¶"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ÐÐÚüÿÿÿÿ8´è¶Ô¹1
+Y
+java:S6437¸"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8¶è¶Ô¹1
+^	java:S125¹"<This block of commented-out lines of code should be removed.(°ˆ™åþÿÿÿÿ8·è¶Ô¹1
+H	java:S106Ã"+Replace this use of System.out by a logger.(Õà»À8¸è¶Ô¹1
+p	java:S100È"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Áõÿµúÿÿÿÿ8¹è¶Ô¹1
+Y
+java:S6437Ê"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8ºè¶Ô¹1
+^	java:S125Ë"<This block of commented-out lines of code should be removed.(°ˆ™åþÿÿÿÿ8»è¶Ô¹1
+G	java:S106×"+Replace this use of System.out by a logger.(¥ŸÅf8¼è¶Ô¹1
+k	java:S100Ü"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔâŠ÷8½è¶Ô¹1
+Y
+java:S6437Þ"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8¾è¶Ô¹1
+M	java:S106ì"+Replace this use of System.out by a logger.(š¼æÔûÿÿÿÿ8Àè¶Ô¹1
+p	java:S100õ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÎ‡®ûÿÿÿÿ8Àè¶Ô¹1
+Y
+java:S6437’"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8Éè¶Ô¹1
+H	java:S106Ÿ"+Replace this use of System.out by a logger.(ŽÑîˆ8Îè¶Ô¹1
+M	java:S106¡"+Replace this use of System.out by a logger.(ü£™Îýÿÿÿÿ8Îè¶Ô¹1
+H	java:S106¢"+Replace this use of System.out by a logger.(ÌÆ»ã8Ïè¶Ô¹1
+H	java:S106¤"+Replace this use of System.out by a logger.(üÕõì8Ïè¶Ô¹1
+p	java:S100«"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊŽüÔùÿÿÿÿ8Ðè¶Ô¹1
+Y
+java:S6437³"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8Òè¶Ô¹1
+H	java:S106½"+Replace this use of System.out by a logger.(·þÇ¹8Õè¶Ô¹1
+M	java:S106¿"+Replace this use of System.out by a logger.(À§¡Žúÿÿÿÿ8Õè¶Ô¹1
+H	java:S106À"+Replace this use of System.out by a logger.(º¾ïÜ8Öè¶Ô¹1
+M	java:S106Â"+Replace this use of System.out by a logger.(õßÍËýÿÿÿÿ8Öè¶Ô¹1
+k	java:S100É"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó÷å8Öè¶Ô¹1
+Y
+java:S6437Ñ"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8Ùè¶Ô¹1
+M	java:S106Û"+Replace this use of System.out by a logger.(Å×Œÿÿÿÿÿ8Üè¶Ô¹1
+M	java:S106Ý"+Replace this use of System.out by a logger.(À§¡Žúÿÿÿÿ8Ýè¶Ô¹1
+H	java:S106Þ"+Replace this use of System.out by a logger.(º¾ïÜ8Ýè¶Ô¹1
+H	java:S106à"+Replace this use of System.out by a logger.(íÇú‡8Þè¶Ô¹1
+p	java:S100ç"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½²ðèûÿÿÿÿ8Þè¶Ô¹1
+Y
+java:S6437ï"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8áè¶Ô¹1
+H	java:S106ø"+Replace this use of System.out by a logger.(ù¼»Ï8ãè¶Ô¹1
+M	java:S106ú"+Replace this use of System.out by a logger.(˜Ý°âþÿÿÿÿ8ãè¶Ô¹1
+H	java:S106û"+Replace this use of System.out by a logger.(õäî¹8äè¶Ô¹1
+H	java:S106ý"+Replace this use of System.out by a logger.(ÊŸ†Û8äè¶Ô¹1
+k	java:S100„"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öÚ—Ð8åè¶Ô¹1
+Y
+java:S6437–"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8êè¶Ô¹1
+M	java:S106¡"+Replace this use of System.out by a logger.(—ˆÉ‚ûÿÿÿÿ8îè¶Ô¹1
+H	java:S106£"+Replace this use of System.out by a logger.(ÙÂ…×8ïè¶Ô¹1
+H	java:S106¤"+Replace this use of System.out by a logger.(À½þ8ïè¶Ô¹1
+M	java:S106¦"+Replace this use of System.out by a logger.(’Š›âùÿÿÿÿ8ðè¶Ô¹1
+p	java:S100­"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(žåæ™øÿÿÿÿ8ñè¶Ô¹1
+u
+java:S3776­"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(žåæ™øÿÿÿÿ8òè¶Ô¹1
+P
+java:S1135¬"2Complete the task associated to this TODO comment.(Ÿáª°8ôè¶Ô¹1
+Y
+java:S6437â"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8ÿè¶Ô¹1
+H	java:S106ñ"+Replace this use of System.out by a logger.(Š•ï¼8„é¶Ô¹1
+H	java:S106ó"+Replace this use of System.out by a logger.(¥ËÞ8„é¶Ô¹1
+G	java:S106ô"+Replace this use of System.out by a logger.(ÝÔ×.8…é¶Ô¹1
+H	java:S106ö"+Replace this use of System.out by a logger.(¯®Ñ¡8…é¶Ô¹1
+p	java:S100ý"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óÛ§Øüÿÿÿÿ8†é¶Ô¹1
+u
+java:S3776ý"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(óÛ§Øüÿÿÿÿ8‡é¶Ô¹1
+O
+java:S1135ü"2Complete the task associated to this TODO comment.(¾‚—)8‰é¶Ô¹1
+Y
+java:S6437"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8‘é¶Ô¹1
+M	java:S106ª"+Replace this use of System.out by a logger.(Êœ­ûÿÿÿÿ8–é¶Ô¹1
+H	java:S106¬"+Replace this use of System.out by a logger.(ô»’ø8–é¶Ô¹1
+M	java:S106­"+Replace this use of System.out by a logger.(ø³Î€ÿÿÿÿÿ8—é¶Ô¹1
+G	java:S106¯"+Replace this use of System.out by a logger.(žµH8˜é¶Ô¹1
+k	java:S100¶"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ‚å“8˜é¶Ô¹1
+p
+java:S3776¶"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Æ‚å“8™é¶Ô¹1
+P
+java:S1135µ"2Complete the task associated to this TODO comment.(¿…ŒÝ8›é¶Ô¹1
+Y
+java:S6437Ö"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8£é¶Ô¹1
+H	java:S106ã"+Replace this use of System.out by a logger.(§Ê’ô8§é¶Ô¹1
+H	java:S106å"+Replace this use of System.out by a logger.(ˆœÆ’8¨é¶Ô¹1
+M	java:S106æ"+Replace this use of System.out by a logger.(îÚú‚ùÿÿÿÿ8©é¶Ô¹1
+M	java:S106è"+Replace this use of System.out by a logger.(”û”„ûÿÿÿÿ8ªé¶Ô¹1
+j	java:S100ô"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öÆà8«é¶Ô¹1
+Y
+java:S6437ö"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8¯é¶Ô¹1
+p	java:S100¢"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ôÂþÿÿÿÿ8¼é¶Ô¹1
+Y
+java:S6437¤"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8¾é¶Ô¹1
+k	java:S100½"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜—Ý¾8Ãé¶Ô¹1
+Y
+java:S6437¿"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8Æé¶Ô¹1
+k	java:S100â"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßÄ¢—8Ïé¶Ô¹1
+Y
+java:S6437ä"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8Ñé¶Ô¹1
+k	java:S100ø"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†þöª8Õé¶Ô¹1
+p
+java:S3776ø"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(†þöª8Öé¶Ô¹1
+Y
+java:S6437ú"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8Øé¶Ô¹1
+k	java:S100²"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Øú¹¾8ëé¶Ô¹1
+p
+java:S3776²"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(Øú¹¾8ëé¶Ô¹1
+Y
+java:S6437´"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8îé¶Ô¹1
+w
+java:S3012ë"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(šåÂ8†ê¶Ô¹1
+|
+java:S3012ñ"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(˜Š°´üÿÿÿÿ8‡ê¶Ô¹1
+p	java:S100€"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡¦¨¸úÿÿÿÿ8‰ê¶Ô¹1
+Y
+java:S6437Š"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8Œê¶Ô¹1
+p	java:S100‘"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñÅÕýúÿÿÿÿ8Žê¶Ô¹1
+Y
+java:S6437›"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8ê¶Ô¹1
+k	java:S100¦"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷ÎÆï8’ê¶Ô¹1
+Y
+java:S6437¨"6Revoke and change this password, as it is compromised.(Å’¼Þûÿÿÿÿ8“ê¶Ô¹1
+u
+java:S3776À"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(öÍõ¤úÿÿÿÿ8™ê¶Ô¹1
+G
+java:S2140Æ")Use "java.util.Random.nextInt()" instead.(»£¼ï8ê¶Ô¹1
+L
+java:S2140É")Use "java.util.Random.nextInt()" instead.(©Ì±¡þÿÿÿÿ8žê¶Ô¹1
+L
+java:S2140Í")Use "java.util.Random.nextInt()" instead.(‚Íàÿùÿÿÿÿ8Ÿê¶Ô¹1
+G
+java:S2140Ø")Use "java.util.Random.nextInt()" instead.(û·£¯8¢ê¶Ô¹1
+L
+java:S2140Û")Use "java.util.Random.nextInt()" instead.(Ý‹Æýÿÿÿÿ8£ê¶Ô¹1
+G
+java:S2140è")Use "java.util.Random.nextInt()" instead.(‡ó÷‘8§ê¶Ô¹1
+G
+java:S2140ì")Use "java.util.Random.nextInt()" instead.(ÃŒƒî8¨ê¶Ô¹1
+L
+java:S2140ï")Use "java.util.Random.nextInt()" instead.(þÁÌ¢ùÿÿÿÿ8©ê¶Ô¹1
+G
+java:S2140ó")Use "java.util.Random.nextInt()" instead.(š¹÷Ò8«ê¶Ô¹1
+L
+java:S2140")Use "java.util.Random.nextInt()" instead.(Ð¨Žùÿÿÿÿ8µê¶Ô¹1
+G
+java:S2140…")Use "java.util.Random.nextInt()" instead.(ù½úÍ8¶ê¶Ô¹1
+G
+java:S2140‰")Use "java.util.Random.nextInt()" instead.(‡ó÷‘8¸ê¶Ô¹1
+G
+java:S2140")Use "java.util.Random.nextInt()" instead.(ÃŒƒî8¹ê¶Ô¹1
+L
+java:S2140")Use "java.util.Random.nextInt()" instead.(þÁÌ¢ùÿÿÿÿ8¹ê¶Ô¹1
+G
+java:S2140”")Use "java.util.Random.nextInt()" instead.(š¹÷Ò8ºê¶Ô¹1
+L
+java:S2140™")Use "java.util.Random.nextInt()" instead.(¦›Ò›þÿÿÿÿ8»ê¶Ô¹1
+^	java:S125Ã"<This block of commented-out lines of code should be removed.(ÐÔªþÿÿÿÿ8Éê¶Ô¹1
+p	java:S100Î"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°Éç†ùÿÿÿÿ8Éê¶Ô¹1
+j
+java:S1128"HRemove this unused import 'SAAS.UAC.UserManagement.TenantAdministrator'.(žà‹¯ûÿÿÿÿ8Íê¶Ô¹1
+\
+java:S1128"?Remove this unused import 'SAAS.UAC.UserManagement.TenantUser'.(§è¾‰8Íê¶Ô¹1
+T
+java:S1128	"7Remove this unused import 'java.security.spec.ECField'.(“¢á¯8Íê¶Ô¹1
+b
+java:S1144ý"?Remove this unused private "insert_TenantAdministrator" method.(óÛ§Øüÿÿÿÿ8Îê¶Ô¹1
+T
+java:S1144¶"6Remove this unused private "insert_TenantUser" method.(Æ‚å“8Îê¶Ô¹1
+ä
+java:S6541²"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 73 to 64, Complexity from 16 to 14, Nesting Level from 3 to 2, Number of Variables from 36 to 6.(Øú¹¾8Ïê¶Ô¹1
+é
+java:S6541À"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 92 to 64, Complexity from 17 to 14, Nesting Level from 3 to 2, Number of Variables from 47 to 6.(öÍõ¤úÿÿÿÿ8Ïê¶Ô¹1

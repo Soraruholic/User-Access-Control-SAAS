@@ -1,0 +1,29 @@
+
+~
+java:S1319"hThe type of "serviceList" should be an interface such as "Set" rather than the implementation "HashSet".(ˆ™µ¢
+Š
+java:S1319"tThe type of "tenantAdministratorList" should be an interface such as "Set" rather than the implementation "HashSet".(ˆ™µ¢
+
+java:S1319"kThe type of "tenantUserList" should be an interface such as "Set" rather than the implementation "HashSet".(ˆ™µ¢
+
+java:S1319"kThe type of "permissionList" should be an interface such as "Set" rather than the implementation "HashSet".(ˆ™µ¢
+{
+java:S1319"eThe type of "roleList" should be an interface such as "Set" rather than the implementation "HashSet".(ˆ™µ¢
+
+java:S1319"kThe type of "permissionPool" should be an interface such as "Set" rather than the implementation "HashSet".(ˆ™µ¢
+{
+java:S1319"eThe type of "rolePool" should be an interface such as "Set" rather than the implementation "HashSet".(ˆ™µ¢
+ˆ
+java:S1319"mThe return type of this method should be an interface such as "Set" rather than the implementation "HashSet".(Û¢şÙıÿÿÿÿ
+‚
+java:S1319"mThe return type of this method should be an interface such as "Set" rather than the implementation "HashSet".(®¢œ
+ˆ
+java:S1319"mThe return type of this method should be an interface such as "Set" rather than the implementation "HashSet".(ˆØÿúûÿÿÿÿ
+m	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²
+V	java:S107"AConstructor has 9 parameters, which is greater than 7 authorized.(ˆ™µ¢
+c
+java:S1128"HRemove this unused import 'SAAS.UAC.UserManagement.TenantAdministrator'.(à‹¯ûÿÿÿÿ
+U
+java:S1128"?Remove this unused import 'SAAS.UAC.UserManagement.TenantUser'.(§è¾‰
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ

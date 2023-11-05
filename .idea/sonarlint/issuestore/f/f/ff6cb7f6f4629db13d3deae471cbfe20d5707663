@@ -1,0 +1,11 @@
+
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ฮฎýüÿÿÿÿ8๓ดิน1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ฝ็8๕ดิน1
+\
+java:S1118":Add a private constructor to hide the implicit public one.(ฎฎÿพ๚ÿÿÿÿ8þดิน1
+U
+java:S1854"8Remove this useless assignment to local variable "user".(ๅธý8ÿดิน1
+r
+java:S1172"PRemove these unused method parameters "userName", "PSW", "email", "phoneNumber".(ฮฎýüÿÿÿÿ8€‘ดิน1
+F
+java:S1481")Remove this unused "user" local variable.(ๅธý8‘ดิน1

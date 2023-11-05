@@ -1,0 +1,104 @@
+
+[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.( ğ›
+a	java:S112…"FDefine and throw a dedicated exception instead of using a generic one.(Å·åøÿÿÿÿ
+a	java:S112×"FDefine and throw a dedicated exception instead of using a generic one.(Å·åøÿÿÿÿ
+\	java:S112®"FDefine and throw a dedicated exception instead of using a generic one.(«¨ï¼
+a	java:S112Ñ"FDefine and throw a dedicated exception instead of using a generic one.(Å·åøÿÿÿÿ
+a	java:S112ã"FDefine and throw a dedicated exception instead of using a generic one.(Í—ééÿÿÿÿÿ
+\	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¦´­ù
+a	java:S112“"FDefine and throw a dedicated exception instead of using a generic one.(ªåûÿÿÿÿ
+f
+java:S1192#"QDefine a constant instead of duplicating this literal "The role is null" 4 times.(ôÔ®?
+{
+java:S1192…"_Define a constant instead of duplicating this literal "The user type is not supported" 4 times.(Å·åøÿÿÿÿ
+q
+java:S1192x"VDefine a constant instead of duplicating this literal "PlatformAdministrator" 3 times.(ª…¼Ëûÿÿÿÿ
+j
+java:S11927"TDefine a constant instead of duplicating this literal "The role_ID is null" 4 times.(ÈÓÈ¬
+J
+java:S1066"/Merge this if statement with the enclosing one.(ª’¼ğÿÿÿÿÿ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë¿™‚
+f	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Ó±û
+f	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á®İÉ
+f	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ÆÇõ
+f	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ÆÇõ
+f	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ÆÇõ
+f	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ÆÇõ
+k	java:S117v"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êÔåÿüÿÿÿÿ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äş¡"
+g	java:S117’"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á®İÉ
+l	java:S117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾³çŒúÿÿÿÿ
+l	java:S117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾³çŒúÿÿÿÿ
+l	java:S117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾³çŒúÿÿÿÿ
+l	java:S117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾³çŒúÿÿÿÿ
+l	java:S117È"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êÔåÿüÿÿÿÿ
+l	java:S117Ü"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”——ÿÿÿÿÿ
+l	java:S117Ü"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”——ÿÿÿÿÿ
+g	java:S117à"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á®İÉ
+l	java:S117ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôœöşıÿÿÿÿ
+l	java:S117ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôœöşıÿÿÿÿ
+l	java:S117ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôœöşıÿÿÿÿ
+l	java:S117ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôœöşıÿÿÿÿ
+l	java:S117ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôœöşıÿÿÿÿ
+l	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒ±€­ıÿÿÿÿ
+g	java:S117Õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÜì·
+g	java:S117Õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÜì·
+g	java:S117Ù"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á®İÉ
+l	java:S117ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Í—ééÿÿÿÿÿ
+l	java:S117ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Í—ééÿÿÿÿÿ
+l	java:S117ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Í—ééÿÿÿÿÿ
+l	java:S117ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Í—ééÿÿÿÿÿ
+l	java:S117ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Í—ééÿÿÿÿÿ
+g	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦´­ù
+g	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦´­ù
+l	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªåûÿÿÿÿ
+l	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªåûÿÿÿÿ
+f
+java:S1301w"KReplace this "switch" statement by "if" statements to increase readability.(õ£‡°úÿÿÿÿ
+g
+java:S1301É"KReplace this "switch" statement by "if" statements to increase readability.(õ£‡°úÿÿÿÿ
+a
+java:S1301Â"KReplace this "switch" statement by "if" statements to increase readability.(¿×àn
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ôÀŠ–
+˜
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¦´­ù
+
+java:S1186“"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ªåûÿÿÿÿ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(ğé÷şÿÿÿÿ
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ğ›
+x
+java:S6201"bReplace this instanceof check and cast with 'instanceof FunctionalPermission functionalpermission'(½šÖ
+c	java:S100 "NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Ó±û
+m
+java:S2737,"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û
+c	java:S100/"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ÆÇõ
+h
+java:S3776/"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¡ÆÇõ
+m
+java:S2737n"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û
+V	java:S125|"<This block of commented-out lines of code should be removed.(ÿõõİøÿÿÿÿ
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äş¡"
+n
+java:S2737™"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û
+i	java:S100œ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾³çŒúÿÿÿÿ
+W	java:S125Î"<This block of commented-out lines of code should be removed.(ÿõõİøÿÿÿÿ
+i	java:S100Ü"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”——ÿÿÿÿÿ
+n
+java:S2737ç"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û
+i	java:S100ê"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôœöşıÿÿÿÿ
+n
+java:S3776ê"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ôœöşıÿÿÿÿ
+Z
+java:S1155‹">Use isEmpty() to check whether the collection is empty or not.(æ¼Áùùÿÿÿÿ
+R	java:S125–"<This block of commented-out lines of code should be removed.(Öö÷Ø
+W	java:S125Ä"<This block of commented-out lines of code should be removed.(¡¦ÄĞşÿÿÿÿ
+W	java:S125Ë"<This block of commented-out lines of code should be removed.(äåœúÿÿÿÿ
+d	java:S100Õ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÜì·
+n
+java:S2737à"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û
+i	java:S100ã"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Í—ééÿÿÿÿÿ
+Z
+java:S1155‰">Use isEmpty() to check whether the collection is empty or not.(æ¼Áùùÿÿÿÿ
+d	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦´­ù
+i	java:S100“"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªåûÿÿÿÿ

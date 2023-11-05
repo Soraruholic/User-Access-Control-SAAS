@@ -15,4 +15,11 @@ public class DataPermission extends Permission{
         this.dataOperationList = dataOperationList;
     }
 
+    public String getDataLocation() {
+        return dataLocation;
+    }
+    public HashSet<DataOperation> getDataOperationList() {
+        return dataOperationList;
+    }
+
 }
