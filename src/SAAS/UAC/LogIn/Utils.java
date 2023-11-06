@@ -73,7 +73,15 @@ public class Utils {
         return Pattern.matches(pattern, PSW);
 
     }
-
+    public static String get_phoneMessageCode() {
+        Random r = new Random();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 6; i++) {
+            int number = r.nextInt(10);
+            sb.append(number);
+        }
+        return sb.toString();
+    }
 
     public static String get_authenticationCode(){
         //1.创建集合
