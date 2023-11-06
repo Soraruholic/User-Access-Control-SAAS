@@ -1,7 +1,6 @@
 package SAAS.UAC.LogIn;
 
 import SAAS.Database.Database;
-import SAAS.UAC.LogIn.Utils.*;
 import SAAS.Utils.GlobalVariables;
 
 public class Register {
@@ -45,6 +44,9 @@ public class Register {
         }
 
         // TODO: Do some check with the password
+        if (!Utils.isValidPSW(PSW)){
+            throw new IllegalArgumentException("Invalid password");
+        }
 
         // (DONE) Do some check with the email
         if (!Utils.isValidEmail(email)) {
