@@ -43,6 +43,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="bcprov-jdk18on-176" level="project" />
+    <orderEntry type="library" name="javax.activation-1.2.0" level="project" />
   </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="09440200-03a9-42e5-8483-4c0772800151" />

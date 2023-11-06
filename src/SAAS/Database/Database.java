@@ -1,12 +1,13 @@
 package SAAS.Database;
+
 import SAAS.UAC.LogIn.LogUser;
+import SAAS.UAC.LogIn.Utils;
 import SAAS.UAC.TenantManagement.PlatformAdministrator;
 import SAAS.UAC.TenantManagement.Tenant;
 import SAAS.UAC.UPR.*;
 import SAAS.UAC.UserManagement.TenantAdministrator;
 import SAAS.UAC.UserManagement.TenantUser;
 
-import java.security.spec.ECField;
 import java.sql.*;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -15,7 +16,7 @@ import java.util.Map;
 
 public class Database {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/SAAS?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/mysql?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
     static final String USER = "root";
     static final String PASS = "saas123";
 
@@ -622,6 +623,10 @@ public class Database {
     public static void insert_userBasic(String user_ID, String userName, String PSW, String email, String phoneNumber, String lastPSWChange, boolean verbose) throws Exception {
         // insert the userBasic into the table
         Class.forName(JDBC_DRIVER);
+
+        //debug userID
+        user_ID = Utils.get_sha256Hex(email);
+
         Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
         String insertUserBasic = "INSERT INTO UserBasic VALUES (?,?,?,?,?,?);";
         PreparedStatement stat = con.prepareStatement(insertUserBasic);
@@ -764,7 +769,7 @@ public class Database {
     public static LogUser select_userBasic(String userID) throws Exception {
         Class.forName(JDBC_DRIVER);
         Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
-        String selectUser = "SELECT * FROM User WHERE userID = '" + userID + "';";
+        String selectUser = "SELECT * FROM UserBasic WHERE userID = '" + userID + "';";
         Statement stat = con.createStatement();
         ResultSet rs = stat.executeQuery(selectUser);
         if (rs.next()) {

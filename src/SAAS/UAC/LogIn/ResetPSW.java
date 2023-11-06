@@ -7,12 +7,12 @@ import java.util.Objects;
 public class ResetPSW {
     protected static String code;
 
-    public static void reset (String username, String newPSW) throws Exception {
+    public static void reset (String email, String newPSW) throws Exception {
         // check whether the userID is null
-        if (username == null) {
+        if (email == null) {
             throw new IllegalArgumentException("The userName is null");
         }
-        String userID = Utils.get_sha256Hex(username);
+        String userID = Utils.get_sha256Hex(email);
 
         // check whether the user exists
         if (Database.select_userBasic(userID) == null) {
@@ -26,7 +26,7 @@ public class ResetPSW {
 
         // send the authentication code to the user
         code = Utils.get_authenticationCode();
-        Utils.send_EmailCode(username, code, "SAAS重置密码验证码");
+        Utils.send_EmailCode(email, code, "SAAS重置密码验证码");
     }
 
     public int verify (String username, String newPSW, String v_code) throws Exception {
