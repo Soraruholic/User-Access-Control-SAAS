@@ -19,8 +19,8 @@ import com.tencentcloudapi.sms.v20210111.models.SendSmsResponse;
  *
  */
 public class PhoneMessage {
-    protected static final String secretId = "AKID51JPIySlslRjqhJjz2qPYaNwJURecKuJ";
-    protected static final String secretKey = "0nCPN5atykJdR2NS6i7LMo69MTQAgxkL";
+    protected static final String secretId = "XXXX";
+    protected static final String secretKey = "XXSX";
     protected static final String sdkAppId = "1400866933";
     protected static final String signName = "MLHub公众号";
 //    String templateId = "449739";
