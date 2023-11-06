@@ -19,10 +19,16 @@ import com.tencentcloudapi.sms.v20210111.models.SendSmsResponse;
  *
  */
 public class PhoneMessage {
-    protected static final String secretId = "XXXX";
-    protected static final String secretKey = "XXSX";
+    protected static String secretId;
+    protected static String secretKey;
     protected static final String sdkAppId = "1400866933";
     protected static final String signName = "MLHub公众号";
+    public static void initializeSecretKey() {
+        // read secretId and secretKey from a csv file locating in E:\git-base-testvqa\SecretKey.csv
+        String[] secretKey = Utils.readSecretKey();
+        PhoneMessage.secretId = secretKey[0].replace("\uFEFF", "");
+        PhoneMessage.secretKey = secretKey[1];
+    }
 //    String templateId = "449739";
 //    String[] templateParamSet = {"1234"};
 //    String[] phoneNumberSet = {"+8621212313123", "+8612345678902", "+8612345678903"};
@@ -53,6 +59,7 @@ public class PhoneMessage {
              * 您也可以直接在代码中写死密钥对，但是小心不要将代码复制、上传或者分享给他人，
              * 以免泄露密钥对危及您的财产安全。
              * SecretId、SecretKey 查询: https://console.cloud.tencent.com/cam/capi */
+
             Credential cred = new Credential(secretId, secretKey);
 
             // 实例化一个http选项，可选，没有特殊需求可以跳过
