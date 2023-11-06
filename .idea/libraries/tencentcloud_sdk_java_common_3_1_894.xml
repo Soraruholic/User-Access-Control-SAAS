@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="tencentcloud-sdk-java-common-3.1.894">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/tencentcloud-sdk-java-common-3.1.894.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
