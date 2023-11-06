@@ -764,7 +764,7 @@ public class Database {
     public static LogUser select_userBasic(String userID) throws Exception {
         Class.forName(JDBC_DRIVER);
         Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
-        String selectUser = "SELECT * FROM User WHERE userID = '" + userID + "';";
+        String selectUser = "SELECT * FROM UserBasic WHERE userID = '" + userID + "';";
         Statement stat = con.createStatement();
         ResultSet rs = stat.executeQuery(selectUser);
         if (rs.next()) {

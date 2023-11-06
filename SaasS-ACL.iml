@@ -50,6 +50,20 @@
     <orderEntry type="library" name="tencentcloud-sdk-java-sms-3.1.893" level="project" />
     <orderEntry type="library" name="totp-1.0" level="project" />
     <orderEntry type="library" name="commons-codec-1.16.0" level="project" />
+    <orderEntry type="library" name="javax.activation-1.2.0" level="project" />
+    <orderEntry type="library" name="logging-interceptor-4.10.0" level="project" />
+    <orderEntry type="library" name="okhttp-4.10.0" level="project" />
+    <orderEntry type="library" name="gson-2.8.9" level="project" />
+    <orderEntry type="library" name="commons-logging-1.1.1" level="project" />
+    <orderEntry type="library" name="kotlin-stdlib-jdk8-1.9.10" level="project" />
+    <orderEntry type="library" name="okio-1.6.0" level="project" />
+    <orderEntry type="library" name="okio-3.4.0" level="project" />
+    <orderEntry type="library" name="kotlin-stdlib-1.9.10" level="project" />
+    <orderEntry type="library" name="okio-3.4.0-all" level="project" />
+    <orderEntry type="library" name="okio-3.4.0 (2)" level="project" />
+    <orderEntry type="library" name="okio-3.1.0" level="project" />
+    <orderEntry type="library" name="okio-3.1.0 (2)" level="project" />
+    <orderEntry type="library" name="okio-2.9.0" level="project" />
   </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="09440200-03a9-42e5-8483-4c0772800151" />
