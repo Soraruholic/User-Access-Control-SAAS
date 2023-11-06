@@ -1,4 +1,4 @@
-package SAAS.UAC.login;
+package SAAS.UAC.LogIn;
 
 import SAAS.UAC.UPR.Permission;
 import SAAS.UAC.UPR.Role;
@@ -27,14 +27,14 @@ public class LUser extends User {
     }
     public String getPassword() {
         return password_sha;
-   }
+    }
     public void setPassword(String password) {
-       this.password_sha = password;
-   }
+        this.password_sha = password;
+    }
 
     public String getPhonenumber() {
-       return phonenumber;
-   }
+        return phonenumber;
+    }
     public String getEmail() {
         return email;
     }

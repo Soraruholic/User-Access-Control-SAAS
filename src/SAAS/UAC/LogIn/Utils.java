@@ -10,6 +10,8 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -130,5 +132,27 @@ public class Utils {
         } catch (MessagingException e) {
             e.printStackTrace();
         }
+    }
+
+    public static String[] readSecretKey() {
+        // read secretId and secretKey from a text file locating in E:\git-base-testvqa\SecretKey.csv
+        // open the file
+        String[] secretKey = new String[2];
+        try {
+            InputStream in=new FileInputStream("E:\\git-base-testvqa\\SecretKey2.txt");
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
+            String line = null;
+            int i = 0;
+            while ((line = reader.readLine()) != null) {
+                secretKey[i] = line;
+                System.out.println(secretKey[i]);
+                i++;
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return secretKey;
     }
 }
