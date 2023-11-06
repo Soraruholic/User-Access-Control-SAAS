@@ -1,8 +1,7 @@
 package SAAS.UAC.LogIn;
 
-import org.bouncycastle.crypto.digests.SHA256Digest;
-import org.bouncycastle.crypto.digests.MD5Digest;
 import org.bouncycastle.crypto.Digest;
+import org.bouncycastle.crypto.digests.SHA256Digest;
 import org.bouncycastle.util.encoders.Hex;
 
 import javax.mail.Message;
@@ -68,6 +67,14 @@ public class Utils {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
+    public static boolean isValidPSW(String PSW) {
+        String pattern = "^(?![0-9A-Za-z]+$)(?![0-9A-Z\\W]+$)(?![0-9a-z\\W]+$)(?![A-Za-z\\W]+$)[0-9A-Za-z~!@#$%^&*()_+`\\-={}|\\[\\]\\\\:\";'<>?,./]{8,}$";
+        return Pattern.matches(pattern, PSW);
+
+    }
+
+
     public static String get_authenticationCode(){
         //1.创建集合
         ArrayList<Character> list = new ArrayList<>();
