@@ -4,6 +4,13 @@ import SAAS.Database.Database;
 import SAAS.UAC.UserAccessControl;
 import SAAS.Utils.GlobalVariables;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.util.Objects;
 
 public class LogIn {
@@ -32,13 +39,12 @@ public class LogIn {
             throw new IllegalArgumentException("User does not exist");
         }
 
-
-
         // Generate the authentication code
         code = Utils.get_authenticationCode();
 
         // Send the authentication code to the user
         Utils.send_EmailCode(email, code, "SAAS登陆验证码");
+
     }
     public static int verify(String userID, String PSW, String v_code) throws Exception {
         // check whether the v_code equals to the code
