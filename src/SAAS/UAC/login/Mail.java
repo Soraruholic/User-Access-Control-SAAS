@@ -1,4 +1,4 @@
-package SAAS.UAC.login;
+package SAAS.UAC.LogIn;
 
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
