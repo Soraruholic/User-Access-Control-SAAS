@@ -15,7 +15,7 @@ public class Register {
         // If the userID is null, then use the SHA256 of userName as the userID
         String user_ID = userID;
         if (userID == null || userID.isEmpty()) {
-            user_ID = Utils.get_sha256Hex(userName);
+            user_ID = Utils.get_sha256Hex(email);
         }
 
         // Check the length of the userName
@@ -59,20 +59,22 @@ public class Register {
         }
 
         // (DONE) Send and verify the authentication code through the email
-        code = Utils.get_authenticationCode();
-        Utils.send_EmailCode(email, code, "SAAS注册验证码");
+//        code = Utils.get_authenticationCode();
+//        Utils.send_EmailCode(email, code, "SAAS注册验证码");
     }
 
-    public int verify(String userID, String userName, String PSW, String email, String phoneNumber, String v_code) throws Exception {
+    public static int verify(String userID, String userName, String PSW, String email, String phoneNumber, String v_code) throws Exception {
         String user_ID = userID;
         if (userID == null || userID.isEmpty()) {
             user_ID = Utils.get_sha256Hex(userName);
         }
 
         // Check whether the v_code equals to the code
-        if (!v_code.equals(code)) {
-            return GlobalVariables.VERIFY_CODE_ERROR;
-        }
+
+//        if (!v_code.equals(code)) {
+//            return GlobalVariables.VERIFY_CODE_ERROR;
+//        }
+
         // (DONE) Add the user to the database
         // Record current UTC time into a string
         String lastPSWChange = Utils.get_currentTime();
